@@ -4,8 +4,6 @@ import PostPreview from '../../components/Post/PostPreview';
 import { getAllPostsPreview } from '../../lib/posts';
 
 export default function Blog({ posts, preview }) {
-	console.log('posts :>> ', posts);
-
 	return (
 		<StyledContainer>
 			<h1>Blog</h1>
