@@ -9,7 +9,7 @@ ${() => css`
 			margin: 0;
 			padding: 0;
 			box-sizing: border-box;
-			font-family: 'Rubik', Arial, sans-serif;
+			font-family: 'Roboto', Arial, sans-serif;
 
 			#root {
 				background: #efefef;
@@ -21,6 +21,15 @@ ${() => css`
 				font-family: sans-serif;
 				height: 100%;
 				padding: 15px;
+			}
+
+			h1,
+			h2,
+			h3,
+			h4,
+			h5,
+			h6 {
+				font-family: 'Rubik', 'Roboto', Arial, Helvetica, sans-serif;
 			}
 
 			ul {
