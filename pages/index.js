@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 
 import SocialLinks from '../components/SocialLinks';
+import SEO from '../components/SEO';
 import { calculateAge } from '../utils/calculateAge';
 
 export default function Home() {
@@ -8,6 +9,7 @@ export default function Home() {
 
 	return (
 		<>
+			<SEO />
 			<StyledHero>
 				<div className='content'>
 					<h1>Hello, I'm Darcy Price</h1>
