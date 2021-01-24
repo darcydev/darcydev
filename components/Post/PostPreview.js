@@ -47,7 +47,7 @@ const StyledContainer = styled.div`
 	}
 
 	.img-wrp {
-		margin-right: 20px;
+		margin-right: 50px;
 	}
 
 	.txt-wrp {
@@ -63,9 +63,11 @@ const StyledContainer = styled.div`
 		time {
 			font-size: 14px;
 			font-style: italic;
+			margin: 0 0 5px 0;
 		}
 
 		p {
+			margin: 5px 0;
 			font-size: 18px;
 		}
 

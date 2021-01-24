@@ -13,8 +13,8 @@ export default function Header() {
 				<nav>
 					<ul>
 						{activeNavItems.map((item) => (
-							<li>
-								<LinkComponent key={item.label} href={`/${item.url}`}>
+							<li key={item.label}>
+								<LinkComponent href={`/${item.url}`}>
 									{item.label}
 								</LinkComponent>
 							</li>

@@ -33,7 +33,13 @@ export default function Blog({ post, morePosts, preview }) {
 
 const StyledContainer = styled.div`
 	.post-wrp {
+		margin: 0 0 100px 0;
+
 		.img-wrp {
+			width: 100%;
+			max-width: 900px;
+			margin: auto;
+
 			img {
 				width: 100%;
 				height: auto;
