@@ -1,9 +1,9 @@
 import React from 'react';
 import { useRouter } from 'next/router';
 import Image from 'next/image';
+import styled from 'styled-components';
 
 import { Layout, Container } from '../components';
-import { StyledAbout } from '../components/styles/about.styles';
 
 const About = () => {
 	const { pathname } = useRouter();
@@ -14,7 +14,7 @@ const About = () => {
 			pageTitle='About'
 			pageDescription='About page of Portfolio by Darcy Price, Software Developer in Australia'
 		>
-			<StyledAbout>
+			<StyledSection>
 				<Container width='narrow'>
 					<div className='postContent'>
 						<div className='avatarImage'>
@@ -52,9 +52,41 @@ const About = () => {
 						</p>
 					</div>
 				</Container>
-			</StyledAbout>
+			</StyledSection>
 		</Layout>
 	);
 };
+
+const StyledSection = styled.section`
+	.avatarImage {
+		margin-right: 0.8em;
+		float: left;
+		shape-outside: circle();
+
+		img {
+			border-radius: 100%;
+			height: 150px;
+			width: 150px;
+		}
+	}
+
+	@media (min-width: 759px) {
+		.avatarImage {
+			margin-right: 1em;
+			img {
+				height: 200px;
+				width: 200px;
+			}
+		}
+	}
+
+	@media (min-width: 1400px) {
+		.avatarImage {
+			img {
+				width: 210px;
+			}
+		}
+	}
+`;
 
 export default About;

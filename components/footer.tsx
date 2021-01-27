@@ -1,52 +1,12 @@
 import React from 'react';
-import {
-	StyledFooterSection,
-	GitHubIcon,
-	CodepenIcon,
-	TwitterIcon,
-} from './styles/footer.styles';
+import styled from 'styled-components';
 
 import { Container } from './container';
+import SocialLinks from './SocialLinks';
 
 const Footer = () => (
 	<StyledFooterSection>
-		<Container className='footer-container'>
-			<ul className='footerSocialLinks'>
-				<li className='footerSocialLink'>
-					<a
-						className='footerLink'
-						href='https://github.com/darcydev'
-						target='_blank'
-						rel='noreferrer noopener'
-					>
-						<GitHubIcon />
-					</a>
-				</li>
-
-				<li className='footerSocialLink'>
-					<a
-						className='footerLink'
-						href='https://codepen.io/Vick_onrails'
-						target='_blank'
-						rel='noreferrer noopener'
-					>
-						<CodepenIcon />
-					</a>
-				</li>
-
-				<li className='footerSocialLink'>
-					<a
-						className='footerLink'
-						href='https://twitter.com/vick_onrails'
-						target='_blank'
-						rel='noreferrer noopener'
-					>
-						<TwitterIcon />
-					</a>
-				</li>
-			</ul>
-		</Container>
-
+		<SocialLinks />
 		<Container>
 			<p className='about-site'>
 				Built by{' '}
@@ -55,12 +15,39 @@ const Footer = () => (
 					target='_blank'
 					rel='noopenner norefferer'
 				>
-					Darcy Price
+					@Darcy
 				</a>
 				. With NextJS, TypeScript, Styled Components and Vercel.
 			</p>
 		</Container>
 	</StyledFooterSection>
 );
+
+const StyledFooterSection = styled.footer`
+	.footer-container {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+
+	.footerSocialLinks {
+		display: flex;
+		margin: auto;
+		margin-bottom: 1em;
+	}
+
+	.footerSocialLink {
+		display: block;
+		margin-right: 0.5em;
+	}
+
+	.about-site {
+		text-align: center;
+		max-width: 400px;
+		font-size: 0.9em;
+		margin-right: auto;
+		margin-left: auto;
+	}
+`;
 
 export default Footer;
