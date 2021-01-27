@@ -18,10 +18,7 @@ const Index: FC = () => {
 					<Container className='container'>
 						<div className='text'>
 							<h2>Code</h2>
-							<p>
-								In the last 3 years, I've been an engineer, a designer and an
-								engineer again.
-							</p>
+							<p>In the last 3 years, I've been a developer.</p>
 							<p>
 								Most of my everyday work falls in between. Having this
 								perspective puts me in a good position to suggest design
