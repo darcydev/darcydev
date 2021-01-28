@@ -28,18 +28,10 @@ export const StyledExperimentsSection = styled.section`
 		margin-bottom: 1rem;
 	}
 
-	/* .section-intro {
-    font-size: 1.5em;
-  } */
-
 	.section {
 		display: flex;
 		flex-wrap: wrap;
 	}
-
-	/* p {
-    padding: 40px 0;
-  } */
 
 	.experiments {
 		display: flex;
@@ -75,11 +67,6 @@ export const StyledExperimentItemContainer = styled.a`
 		margin-bottom: 0.5em;
 		font-size: 1em;
 	}
-
-	/* p {
-    font-size: 0.875em;
-    margin-bottom: 1em;
-  } */
 
 	ul {
 		list-style-type: none;

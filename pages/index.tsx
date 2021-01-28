@@ -4,7 +4,6 @@ import { useRouter } from 'next/router';
 import styled from 'styled-components';
 
 import { Layout, Container } from '../components';
-import { StyledIndexPage } from '../components/styles/home.styles';
 import ExperimentsSection from '../components/experiments';
 
 //@ts-ignore
@@ -12,7 +11,7 @@ const Index: FC = () => {
 	const { pathname } = useRouter();
 
 	return (
-		<Layout pathname={pathname} pageTitle='Darcy Price Portfolio'>
+		<Layout pathname={pathname} pageTitle='Darcy Price'>
 			<StyledIndexPage>
 				<StyledDesignSection>
 					<Container className='container'>
@@ -41,6 +40,18 @@ const Index: FC = () => {
 		</Layout>
 	);
 };
+
+const StyledIndexPage = styled.section`
+	h1 {
+		word-spacing: -10px;
+	}
+
+	@media (min-width: 1024px) {
+		h1 {
+			word-spacing: -20px;
+		}
+	}
+`;
 
 const StyledDesignSection = styled.section`
 	background: #fff url('/images/background-pattern.jpg');

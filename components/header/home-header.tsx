@@ -1,21 +1,41 @@
 import React from 'react';
+import styled from 'styled-components';
 
 import { Container } from '../container';
 import siteConfig from '../../config/index.json';
-import { StyledHomeHeading } from '../styles/header.styles';
 
 const HomeHeader = () => (
 	<StyledHomeHeading>
 		<Container>
 			<div className='header-container'>
-				<h1>{siteConfig.author.title}</h1>
-				<p
-					className='description'
-					dangerouslySetInnerHTML={{ __html: siteConfig.author.description }}
-				/>
+				<h1>{siteConfig.author.name}</h1>
+				<h2>{siteConfig.author.title}</h2>
+				<p className='description'>
+					Hi! My name is Darcy Price, I'm a developer based in Sydney,
+					Australia. I love to build modern experiences on the web. I also love
+					working on little side projects that help others build things faster
+					🙏🏾
+				</p>
 			</div>
 		</Container>
 	</StyledHomeHeading>
 );
+
+const StyledHomeHeading = styled.div`
+	@media (min-width: 1024px) {
+		.header-container {
+			max-width: 70%;
+		}
+		.description {
+			font-size: 1.2em;
+		}
+	}
+
+	@media (min-width: 1336px) {
+		.header-container {
+			max-width: 80%;
+		}
+	}
+`;
 
 export default HomeHeader;

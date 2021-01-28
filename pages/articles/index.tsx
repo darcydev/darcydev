@@ -1,11 +1,14 @@
 import React from 'react';
 import { useRouter } from 'next/router';
 
-import { Layout, Container, Cards } from '../../components';
-import { getContentList } from '../../lib/content';
+import { Layout, Container } from '../../components';
+import { getAllPostsPreview } from '../../lib/posts';
+import { StyledCards } from '../../components/styles/cards.styles';
+import { PostPreview } from '../../components/posts/PostPreview';
 
-const Articles = ({ articles }) => {
+const Articles = ({ posts, preview }) => {
 	const { pathname } = useRouter();
+
 	return (
 		<Layout
 			pathname={pathname}
@@ -22,16 +25,22 @@ const Articles = ({ articles }) => {
 					All articles here are for demo purposes. But hey, the sky is the limit
 					🚀
 				</blockquote>
-				<Cards data={articles} basePath='articles' />
+				<StyledCards>
+					{posts.map((post) => (
+						<PostPreview post={post} />
+					))}
+				</StyledCards>
 			</Container>
 		</Layout>
 	);
 };
 
-export const getStaticProps = async () => {
-	const articles = getContentList('articles');
+export const getStaticProps = async ({ preview = false }) => {
+	const posts = (await getAllPostsPreview(preview)) || [];
+
 	return {
-		props: { articles },
+		props: { posts, preview },
+		revalidate: 1,
 	};
 };
 
