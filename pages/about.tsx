@@ -23,32 +23,33 @@ const About = () => {
 						<p>
 							I'm{' '}
 							<a
-								href='https://twitter.com/vick_OnRails'
+								href='https://twitter.com/mrdarcyprice'
 								target='_blank'
 								rel='noopenner noreferrer'
 							>
 								@Darcy
 							</a>
-							, a Designer and Frontend Engineer learning to build fast and
-							delightful experiences on the web. I'm also passionate about Web
-							Standards, Design Systems and Learning in Public.
+							, a Full-Stack Developer who loves to build fast and delightful
+							experiences on the web. I'm also passionate about building
+							performant, decoupled, testable and maintainable code. I have a
+							keen interested in open source and learning new technologies.
 						</p>
 						<p>
 							Aside from my day job, I work on a few side projects to help
-							designers and engineers build with speed
+							designers and engineers build with speed.
 						</p>
 						<p>
-							I work heavily with ReactJs, Redux, Styled Components, Figma,
-							Storybook & recently picked up C#/Dotnet Core for backend APIs. If
-							you're excited about any of the following, please shoot at me on{' '}
+							I work heavily with ReactJS, Redux, Styled Components, NextJS,
+							Drupal, NodeJS, PHP. If you're excited about any of the following,
+							shoot at me on{' '}
 							<a
-								href='https://twitter.com/vick_OnRails'
+								href='https://twitter.com/mrdarcyprice'
 								target='_blank'
 								rel='noopenner noreferrer'
 							>
 								Twitter
 							</a>{' '}
-							and let's be friends 😊.
+							and let's build together! 😊
 						</p>
 					</div>
 				</Container>
@@ -58,32 +59,27 @@ const About = () => {
 };
 
 const StyledSection = styled.section`
-	.avatarImage {
-		margin-right: 0.8em;
-		float: left;
-		shape-outside: circle();
+	.postContent {
+		display: flex;
+		flex-direction: column;
+		text-align: center;
 
-		img {
-			border-radius: 100%;
-			height: 150px;
-			width: 150px;
-		}
-	}
-
-	@media (min-width: 759px) {
 		.avatarImage {
-			margin-right: 1em;
-			img {
-				height: 200px;
-				width: 200px;
-			}
-		}
-	}
+			margin: 0 0 1.5em 0;
 
-	@media (min-width: 1400px) {
-		.avatarImage {
 			img {
-				width: 210px;
+				border-radius: 100%;
+				height: 150px;
+				width: 150px;
+
+				@media (min-width: 759px) {
+					height: 200px;
+					width: 200px;
+				}
+
+				@media (min-width: 1400px) {
+					width: 210px;
+				}
 			}
 		}
 	}

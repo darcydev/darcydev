@@ -17,12 +17,17 @@ const Index: FC = () => {
 					<Container className='container'>
 						<div className='text'>
 							<h2>Code</h2>
-							<p>In the last 3 years, I've been a developer.</p>
 							<p>
-								Most of my everyday work falls in between. Having this
-								perspective puts me in a good position to suggest design
-								solutions and quickly prototype them with code. And I'm loving
-								every part of it!
+								Consequat cupidatat id exercitation ex ut dolor fugiat esse. Ex
+								velit sint adipisicing cillum. Ea voluptate in ex aute aliquip
+								ut excepteur ex ullamco ullamco.
+							</p>
+							<p>
+								Ipsum consequat ex tempor Lorem aliquip officia id mollit anim.
+								Do adipisicing ullamco officia aliqua reprehenderit sunt aliquip
+								id Lorem consequat nisi sunt non culpa. Velit nostrud tempor
+								proident nisi dolore ullamco sit voluptate minim. Nostrud non
+								Lorem proident magna esse.
 							</p>
 						</div>
 						<div className='image'>

@@ -1,6 +1,6 @@
 import React, { FC, HTMLAttributes } from 'react';
 import { StyledContainer } from './styles/container.styles';
-import { IWidth } from '../util/getWidth';
+import { IWidth } from '../utils/getWidth';
 
 export interface IContainer extends HTMLAttributes<HTMLElement> {
 	width?: IWidth;

@@ -1,14 +1,18 @@
 import React from 'react';
-import { Layout, Container, Cards } from '../../components';
 import { useRouter } from 'next/router';
-import { getContentList } from '../../lib/content';
 
-const Work = ({ works }) => {
+import { Layout, Container } from '../../components';
+import { ProjectPreview } from '../../components/projects/ProjectPreview';
+import { getAllProjects } from '../../lib/projects';
+import { StyledCards } from '../../components/styles/cards.styles';
+
+const Work = ({ projects }) => {
 	const { pathname } = useRouter();
+
 	return (
 		<Layout
 			pathname={pathname}
-			pageTitle='Works &amp; Projects'
+			pageTitle='Works & Projects'
 			pageDescription='Works and projects spanning Product design, Research, frontend and software engineering with ReactJS, React Native and NodeJs'
 		>
 			<Container>
@@ -16,16 +20,22 @@ const Work = ({ works }) => {
 					Selected works I'm proud of. Ranging from Software Engineering and
 					Product Design.
 				</p>
-				<Cards data={works} basePath='works' />
+				<StyledCards>
+					{projects.map((project) => (
+						<ProjectPreview project={project} />
+					))}
+				</StyledCards>
 			</Container>
 		</Layout>
 	);
 };
 
-export const getStaticProps = async () => {
-	const works = getContentList('work');
+export const getStaticProps = async ({ preview = false }) => {
+	const projects = (await getAllProjects(preview)) || [];
+
 	return {
-		props: { works },
+		props: { projects, preview },
+		revalidate: 1,
 	};
 };
 

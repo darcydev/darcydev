@@ -18,7 +18,7 @@ const Nav = () => {
 			<Container>
 				<nav className='navWrapper'>
 					<div className='navLeft'>
-						<NextLink href='/'>
+						<NextLink href='/' newTab={false}>
 							<Logo />
 							<span>{SiteConfig.author.name}</span>
 						</NextLink>
@@ -33,7 +33,9 @@ const Nav = () => {
 						<ul className='navLinkList'>
 							{activeNavItems.map((item) => (
 								<li className='navLinkItem'>
-									<NextLink href={item.url}>{item.label}</NextLink>
+									<NextLink href={item.url} newTab={false}>
+										{item.label}
+									</NextLink>
 								</li>
 							))}
 						</ul>

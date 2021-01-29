@@ -11,7 +11,9 @@ const MobileNav = () => {
 				<ul className='linkList'>
 					{activeNavItems.map((item) => (
 						<li className='listItem'>
-							<NextLink href={item.url}>{item.label}</NextLink>
+							<NextLink href={item.url} newTab={false}>
+								{item.label}
+							</NextLink>
 						</li>
 					))}
 				</ul>

@@ -1,7 +1,6 @@
-import React, { ReactElement } from 'react';
+import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import styled from 'styled-components';
 
 import { Date } from '../Date';
 

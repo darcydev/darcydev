@@ -1,41 +1,27 @@
 import React from 'react';
 
 import { Container } from './container';
-import { GitHubIcon, CodepenIcon, TwitterIcon } from './Icons';
+import NextLink from './NextLink';
+import { GitHubIcon, TwitterIcon, LinkedInIcon } from './Icons';
 
 export default function SocialLinks() {
 	return (
 		<Container className='footer-container'>
 			<ul className='footerSocialLinks'>
 				<li className='footerSocialLink'>
-					<a
-						className='footerLink'
-						href='https://github.com/darcydev'
-						target='_blank'
-						rel='noreferrer noopener'
-					>
+					<NextLink href='https://github.com/darcydev' newTab={true}>
 						<GitHubIcon />
-					</a>
+					</NextLink>
 				</li>
 				<li className='footerSocialLink'>
-					<a
-						className='footerLink'
-						href='https://codepen.io/Vick_onrails'
-						target='_blank'
-						rel='noreferrer noopener'
-					>
-						<CodepenIcon />
-					</a>
+					<NextLink href='https://linkedin.com/in/darcyprice/' newTab={true}>
+						<LinkedInIcon />
+					</NextLink>
 				</li>
 				<li className='footerSocialLink'>
-					<a
-						className='footerLink'
-						href='https://twitter.com/vick_onrails'
-						target='_blank'
-						rel='noreferrer noopener'
-					>
+					<NextLink href='https://twitter.com/darcydev' newTab={true}>
 						<TwitterIcon />
-					</a>
+					</NextLink>
 				</li>
 			</ul>
 		</Container>

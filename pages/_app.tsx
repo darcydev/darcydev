@@ -1,6 +1,7 @@
 import { ReactComponentElement } from 'react';
 import { AppProps } from 'next/app';
 
+import { GlobalStyles } from '../styles';
 import '../components/styles/layout.css';
 
 /**
@@ -9,7 +10,12 @@ import '../components/styles/layout.css';
  * @param {object} pageProps All props for the page
  */
 function MyApp({ Component, pageProps }: AppProps) {
-	return <Component {...pageProps} />;
+	return (
+		<>
+			<GlobalStyles />
+			<Component {...pageProps} />
+		</>
+	);
 }
 
 export default MyApp;
