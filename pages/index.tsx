@@ -4,11 +4,12 @@ import { useRouter } from 'next/router';
 import styled from 'styled-components';
 
 import { Layout, Container } from '../components';
-import ExperimentsSection from '../components/experiments';
+import ExperimentCard from '../components/experiments/Card';
 import { LinkExternal } from '../components/LinkExternal';
+import { getAllExperiments } from '../lib/experiments';
 
 //@ts-ignore
-const Index: FC = () => {
+const Index: FC = ({ experiments, preview }) => {
 	const { pathname } = useRouter();
 
 	return (
@@ -47,7 +48,21 @@ const Index: FC = () => {
 						</div>
 					</Container>
 				</StyledDesignSection>
-				<ExperimentsSection />
+				<StyledExperimentsSection>
+					<Container>
+						<h2>Experiments</h2>
+						<p className='section-intro max-width'>
+							I try to stage little experiments to help me learn things I find
+							interesting. I almost never finish them 🙈. But I learn a lot
+							anyways
+						</p>
+						<section className='experiments'>
+							{experiments.map((experiment) => (
+								<ExperimentCard key={experiment.id} experiment={experiment} />
+							))}
+						</section>
+					</Container>
+				</StyledExperimentsSection>
 			</StyledIndexPage>
 		</Layout>
 	);
@@ -117,5 +132,46 @@ const StyledDesignSection = styled.section`
 		}
 	}
 `;
+
+const StyledExperimentsSection = styled.section`
+	margin-top: 40px;
+	margin-bottom: 40px;
+
+	h2 {
+		font-size: 1.75em;
+		margin-bottom: 1rem;
+	}
+
+	.section {
+		display: flex;
+		flex-wrap: wrap;
+	}
+
+	.experiments {
+		display: flex;
+		flex-wrap: wrap;
+	}
+
+	.experiment-meta {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+	}
+
+	@media all and (min-width: 1020px) {
+		h2 {
+			font-size: 2.75em;
+		}
+	}
+`;
+
+export const getStaticProps = async ({ preview = false }) => {
+	const experiments = (await getAllExperiments(preview)) || [];
+
+	return {
+		props: { experiments, preview },
+		revalidate: 1,
+	};
+};
 
 export default Index;

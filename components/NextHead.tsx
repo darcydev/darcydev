@@ -1,4 +1,4 @@
-import React, { useState, createContext, ReactNode } from 'react';
+import React from 'react';
 import Head from 'next/head';
 
 import SiteConfig from '../config/index.json';

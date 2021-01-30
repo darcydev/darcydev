@@ -6,7 +6,6 @@ import { Container } from './container';
 import LinkInternal from './LinkInternal';
 import Hamburger from './nav/Hamburger';
 import { activeNavItems } from '../constants/nav';
-import SiteConfig from '../config/index.json';
 
 const Nav = () => {
 	const menuContext = useContext(MenuContext);
@@ -19,7 +18,7 @@ const Nav = () => {
 				<nav className='navWrapper'>
 					<div className='navLeft'>
 						<LinkInternal href='/'>
-							<p>{SiteConfig.author.name}</p>
+							<p>Darcy Price</p>
 						</LinkInternal>
 					</div>
 
