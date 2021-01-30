@@ -18,7 +18,11 @@ const About = () => {
 				<Container width='narrow'>
 					<div className='postContent'>
 						<div className='avatarImage'>
-							<Image src='/images/avatar.jpg' width={200} height={200} />
+							<Image
+								src='https://via.placeholder.com/600.jpg'
+								width={200}
+								height={200}
+							/>
 						</div>
 						<p>
 							I'm{' '}

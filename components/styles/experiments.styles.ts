@@ -50,34 +50,3 @@ export const StyledExperimentsSection = styled.section`
 		}
 	}
 `;
-
-export const StyledExperimentItemContainer = styled.a`
-	text-decoration: none;
-
-	&:hover {
-		text-decoration: none;
-	}
-
-	time {
-		font-size: 0.75em;
-		color: #808080;
-	}
-
-	h3 {
-		margin-bottom: 0.5em;
-		font-size: 1em;
-	}
-
-	ul {
-		list-style-type: none;
-	}
-
-	li {
-		display: inline-block;
-		border: 1px solid #bf360c;
-		padding: 0.2em 0.75em;
-		color: #bf360c;
-		font-size: 0.75em;
-		margin-right: 0.5em;
-	}
-`;

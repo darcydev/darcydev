@@ -1,27 +1,43 @@
 import React from 'react';
 
 import { Container } from './container';
-import NextLink from './NextLink';
-import { GitHubIcon, TwitterIcon, LinkedInIcon } from './Icons';
+import {
+	GitHubIcon,
+	TwitterIcon,
+	LinkedInIcon,
+	MediumIcon,
+	MailIcon,
+} from './Icons';
+import { LinkExternal } from './LinkExternal';
 
 export default function SocialLinks() {
 	return (
 		<Container className='footer-container'>
 			<ul className='footerSocialLinks'>
 				<li className='footerSocialLink'>
-					<NextLink href='https://github.com/darcydev' newTab={true}>
+					<LinkExternal href='mailto:darcyelsing@gmail.com'>
+						<MailIcon />
+					</LinkExternal>
+				</li>
+				<li className='footerSocialLink'>
+					<LinkExternal href='https://github.com/darcydev'>
 						<GitHubIcon />
-					</NextLink>
+					</LinkExternal>
 				</li>
 				<li className='footerSocialLink'>
-					<NextLink href='https://linkedin.com/in/darcyprice/' newTab={true}>
+					<LinkExternal href='https://linkedin.com/in/darcyprice/'>
 						<LinkedInIcon />
-					</NextLink>
+					</LinkExternal>
 				</li>
 				<li className='footerSocialLink'>
-					<NextLink href='https://twitter.com/darcydev' newTab={true}>
+					<LinkExternal href='https://twitter.com/darcydev'>
 						<TwitterIcon />
-					</NextLink>
+					</LinkExternal>
+				</li>
+				<li className='footerSocialLink'>
+					<LinkExternal href='https://mrdarcyprice.medium.com/'>
+						<MediumIcon />
+					</LinkExternal>
 				</li>
 			</ul>
 		</Container>
