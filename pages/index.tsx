@@ -67,7 +67,7 @@ const StyledIndexPage = styled.section`
 
 const StyledDesignSection = styled.section`
 	background: #fff url('/images/background-pattern.jpg');
-	padding: 40px 0;
+	padding: 60px 0;
 
 	.container {
 		display: flex;

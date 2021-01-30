@@ -30,7 +30,7 @@ export default function SocialLinks() {
 					</LinkExternal>
 				</li>
 				<li className='footerSocialLink'>
-					<LinkExternal href='https://twitter.com/darcydev'>
+					<LinkExternal href='https://twitter.com/mrdarcyprice'>
 						<TwitterIcon />
 					</LinkExternal>
 				</li>

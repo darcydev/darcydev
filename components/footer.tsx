@@ -9,15 +9,7 @@ const Footer = () => (
 		<SocialLinks />
 		<Container>
 			<p className='about-site'>
-				Built by{' '}
-				<a
-					href='https://twitter.com/mrdarcyprice'
-					target='_blank'
-					rel='noopenner norefferer'
-				>
-					@Darcy
-				</a>
-				. With NextJS, TypeScript, Styled Components and Vercel.
+				Built with NextJS, TypeScript, Styled Components and Vercel.
 			</p>
 		</Container>
 	</StyledFooterSection>
