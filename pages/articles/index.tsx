@@ -18,9 +18,8 @@ const Articles = ({ posts, preview }) => {
 			<Container>
 				<p className='page-intro'>
 					A collection of long-form articles and essays about new things I'm
-					exploring and learning about...
+					exploring and learning about... 🚀
 				</p>
-				<blockquote>Maybe they'll end up in a book one day 🚀</blockquote>
 				<StyledCards>
 					{posts.map((post) => (
 						<PostPreview post={post} />

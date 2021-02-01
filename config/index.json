@@ -7,9 +7,9 @@
 	"site": {
 		"siteUrl": "https://darcydev.com",
 		"siteName": "Darcy",
-		"siteTitle": "Software Developer",
+		"siteTitle": "Developer",
 		"siteDescription": "Peacock is a Nextjs starter for Personal Sites/Portfolios made by @vick_onrails",
-		"keywords": "JavaScript, NextJS, Software Engineer, Nigeria Software Engineer, Lagos Software Engineer, JavaScript Engineer Nigeria, ReactJS Engineer Nigeria, Product Designer Nigeria, Victor Ofoegbu",
+		"keywords": "JavaScript, NextJS, Software Engineer, Australia Software Engineer, Sydney Software Engineer, JavaScript Engineer Australia, ReactJS Engineer Australia, Darcy Price",
 		"siteImage": "../public/Logo.png"
 	}
 }

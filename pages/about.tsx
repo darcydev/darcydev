@@ -4,15 +4,17 @@ import Image from 'next/image';
 import styled from 'styled-components';
 
 import { Layout, Container } from '../components';
+import { calculateAge } from '../utils/calculateAge';
 
 const About = () => {
 	const { pathname } = useRouter();
+	const age = calculateAge();
 
 	return (
 		<Layout
 			pathname={pathname}
 			pageTitle='About'
-			pageDescription='About page of Portfolio by Darcy Price, Software Developer in Australia'
+			pageDescription='About page of Portfolio by Darcy Price, Full-Stack Developer in Australia'
 		>
 			<StyledSection>
 				<Container width='narrow'>
@@ -25,27 +27,24 @@ const About = () => {
 							/>
 						</div>
 						<p>
-							I'm{' '}
-							<a
-								href='https://twitter.com/mrdarcyprice'
-								target='_blank'
-								rel='noopenner noreferrer'
-							>
-								@Darcy
-							</a>
-							, a Full-Stack Developer who loves to build fast and delightful
-							experiences on the web. I'm also passionate about building
-							performant, decoupled, testable and maintainable code. I have a
-							keen interested in open source and learning new technologies.
+							I'm Darcy Price, a {age} years' old full-stack developer based in
+							Sydney, Australia. I love to build fast and delightful experiences
+							on the web applications. I'm also passionate about building
+							performant, decoupled, testable and maintainable code. I also have
+							a keen interested in open source and learning new technologies.
 						</p>
 						<p>
-							Aside from my day job, I work on a few side projects to help
-							designers and engineers build with speed.
+							After my graduating from law school, I worked as a lawyer for two
+							years in London. However, a secondment program working with an NGO
+							in providing technology solutions to implement solar energy in
+							India, exposed me to the power of technology. I decided to pursue
+							a career as a developer, and within four months I had left a
+							career in law and was working as a full-stack developer.
 						</p>
 						<p>
-							I work heavily with ReactJS, Redux, Styled Components, NextJS,
-							Drupal, NodeJS, PHP. If you're excited about any of the following,
-							shoot at me on{' '}
+							I work heavily with ReactJS, Styled Components, NextJS, Drupal,
+							NodeJS, PHP. If you're work with those technologies, shoot at me
+							on{' '}
 							<a
 								href='https://twitter.com/mrdarcyprice'
 								target='_blank'

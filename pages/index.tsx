@@ -29,9 +29,9 @@ const Index: FC = ({ experiments, preview }) => {
 								<LinkExternal href='https://github.com/getify/You-Dont-Know-JS'>
 									<span>YDKJS series</span>
 								</LinkExternal>
-								, I have crafted the ability to write components in vanilla ES6
-								JavaScript, but can leverage existing libraries when it makes
-								sense to do so.
+								, I have crafted the ability to both write components in vanilla
+								ES6 JavaScript, but can also leverage existing libraries when it
+								makes sense to do so.
 							</p>
 							<p>
 								Fundamentally, I possess an ability and willingness to learn new
