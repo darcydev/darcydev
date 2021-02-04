@@ -4,8 +4,8 @@ import Tilt from 'react-tilt';
 import { ExternalLink as ExternalLinkIcon } from 'react-feather';
 
 import Tag from './Tag';
-import { LinkExternal } from '../LinkExternal';
 import { formatDate } from '../../utils/formateDate';
+import { ExternalLink } from '../Link';
 
 interface Props {
 	experiment: {
@@ -22,7 +22,7 @@ const Card = ({ experiment }: Props) => {
 
 	return (
 		<StyledTilter>
-			<LinkExternal href={`${externalUrl}`}>
+			<ExternalLink href={`${externalUrl}`}>
 				<>
 					<div className='experiment-meta'>
 						<time className='experiment-date'>{formatDate(createdAt)}</time>
@@ -38,7 +38,7 @@ const Card = ({ experiment }: Props) => {
 						))}
 					</ul>
 				</>
-			</LinkExternal>
+			</ExternalLink>
 		</StyledTilter>
 	);
 };

@@ -2,9 +2,9 @@ import React from 'react';
 import { useRouter } from 'next/router';
 
 import { Layout, Container } from '../../components';
+import ArticlesWrap from '../../components/articles/ArticlesWrap';
+import { ArticleTile } from '../../components/articles/ArticleTile';
 import { getAllPostsPreview } from '../../lib/posts';
-import { StyledCards } from '../../components/styles/cards.styles';
-import { PostPreview } from '../../components/posts/PostPreview';
 
 const Articles = ({ posts, preview }) => {
 	const { pathname } = useRouter();
@@ -20,11 +20,11 @@ const Articles = ({ posts, preview }) => {
 					A collection of long-form articles and essays about new things I'm
 					exploring and learning about... 🚀
 				</p>
-				<StyledCards>
+				<ArticlesWrap>
 					{posts.map((post) => (
-						<PostPreview post={post} />
+						<ArticleTile post={post} />
 					))}
-				</StyledCards>
+				</ArticlesWrap>
 			</Container>
 		</Layout>
 	);

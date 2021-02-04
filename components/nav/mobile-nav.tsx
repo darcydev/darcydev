@@ -1,7 +1,7 @@
 import React from 'react';
 import styled, { keyframes } from 'styled-components';
 
-import LinkInternal from '../LinkInternal';
+import { InternalLink } from '../Link';
 import { activeNavItems } from '../../constants/nav';
 
 const MobileNav = () => {
@@ -11,7 +11,7 @@ const MobileNav = () => {
 				<ul className='linkList'>
 					{activeNavItems.map((item) => (
 						<li key={item.label} className='listItem'>
-							<LinkInternal href={item.url}>{item.label}</LinkInternal>
+							<InternalLink href={item.url}>{item.label}</InternalLink>
 						</li>
 					))}
 				</ul>

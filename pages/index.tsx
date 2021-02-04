@@ -5,7 +5,7 @@ import styled from 'styled-components';
 
 import { Layout, Container } from '../components';
 import ExperimentCard from '../components/experiments/Card';
-import { LinkExternal } from '../components/LinkExternal';
+import { ExternalLink } from '../components/Link';
 import { getAllExperiments } from '../lib/experiments';
 
 //@ts-ignore
@@ -26,9 +26,9 @@ const Index: FC = ({ experiments, preview }) => {
 							</p>
 							<p>
 								Inspired by the{' '}
-								<LinkExternal href='https://github.com/getify/You-Dont-Know-JS'>
+								<ExternalLink href='https://github.com/getify/You-Dont-Know-JS'>
 									<span>YDKJS series</span>
-								</LinkExternal>
+								</ExternalLink>
 								, I have crafted the ability to both write components in vanilla
 								ES6 JavaScript, but can also leverage existing libraries when it
 								makes sense to do so.

@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 import { MenuContext } from '.';
 import { Container } from './container';
-import LinkInternal from './LinkInternal';
+import { InternalLink } from './Link';
 import Hamburger from './nav/Hamburger';
 import { activeNavItems } from '../constants/nav';
 
@@ -17,9 +17,9 @@ const Nav = () => {
 			<Container>
 				<nav className='navWrapper'>
 					<div className='navLeft'>
-						<LinkInternal href='/'>
+						<InternalLink href='/'>
 							<p>Darcy Price</p>
-						</LinkInternal>
+						</InternalLink>
 					</div>
 
 					<div className='navRight'>
@@ -27,7 +27,7 @@ const Nav = () => {
 						<ul className='navLinkList'>
 							{activeNavItems.map((item) => (
 								<li key={item.label} className='navLinkItem'>
-									<LinkInternal href={item.url}>{item.label}</LinkInternal>
+									<InternalLink href={item.url}>{item.label}</InternalLink>
 								</li>
 							))}
 						</ul>

@@ -8,36 +8,36 @@ import {
 	MediumIcon,
 	MailIcon,
 } from './Icons';
-import { LinkExternal } from './LinkExternal';
+import { ExternalLink } from './Link';
 
 export default function SocialLinks() {
 	return (
 		<Container className='footer-container'>
 			<ul className='footerSocialLinks'>
 				<li className='footerSocialLink'>
-					<LinkExternal href='mailto:darcyelsing@gmail.com'>
+					<ExternalLink href='mailto:darcyelsing@gmail.com'>
 						<MailIcon />
-					</LinkExternal>
+					</ExternalLink>
 				</li>
 				<li className='footerSocialLink'>
-					<LinkExternal href='https://github.com/darcydev'>
+					<ExternalLink href='https://github.com/darcydev'>
 						<GitHubIcon />
-					</LinkExternal>
+					</ExternalLink>
 				</li>
 				<li className='footerSocialLink'>
-					<LinkExternal href='https://linkedin.com/in/darcyprice/'>
+					<ExternalLink href='https://linkedin.com/in/darcyprice/'>
 						<LinkedInIcon />
-					</LinkExternal>
+					</ExternalLink>
 				</li>
 				<li className='footerSocialLink'>
-					<LinkExternal href='https://twitter.com/mrdarcyprice'>
+					<ExternalLink href='https://twitter.com/mrdarcyprice'>
 						<TwitterIcon />
-					</LinkExternal>
+					</ExternalLink>
 				</li>
 				<li className='footerSocialLink'>
-					<LinkExternal href='https://mrdarcyprice.medium.com/'>
+					<ExternalLink href='https://mrdarcyprice.medium.com/'>
 						<MediumIcon />
-					</LinkExternal>
+					</ExternalLink>
 				</li>
 			</ul>
 		</Container>

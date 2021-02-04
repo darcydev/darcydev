@@ -2,9 +2,9 @@ import React from 'react';
 import { useRouter } from 'next/router';
 
 import { Layout, Container } from '../../components';
-import { ProjectPreview } from '../../components/projects/ProjectPreview';
+import ArticlesWrap from '../../components/articles/ArticlesWrap';
+import { ArticleTile } from '../../components/articles/ArticleTile';
 import { getAllProjects } from '../../lib/projects';
-import { StyledCards } from '../../components/styles/cards.styles';
 
 const Work = ({ projects }) => {
 	const { pathname } = useRouter();
@@ -20,11 +20,11 @@ const Work = ({ projects }) => {
 					Selected works I'm proud of. Ranging from Software Engineering and
 					Product Design.
 				</p>
-				<StyledCards>
+				<ArticlesWrap>
 					{projects.map((project) => (
-						<ProjectPreview project={project} />
+						<ArticleTile post={project} />
 					))}
-				</StyledCards>
+				</ArticlesWrap>
 			</Container>
 		</Layout>
 	);
