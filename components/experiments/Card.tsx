@@ -7,7 +7,7 @@ import Tag from './Tag';
 import { formatDate } from '../../utils/formateDate';
 import { ExternalLink } from '../Link';
 
-interface Props {
+interface iCard {
 	experiment: {
 		title: string;
 		description: string;
@@ -17,7 +17,7 @@ interface Props {
 	};
 }
 
-const Card = ({ experiment }: Props) => {
+const Card = ({ experiment }: iCard) => {
 	const { title, description, createdAt, tags, externalUrl } = experiment;
 
 	return (
@@ -57,7 +57,7 @@ const StyledTilter = styled(Tilt)`
 	}
 
 	@media all and (min-width: 1024px) {
-		flex: 1 30%;
+		flex: 0 0 30%;
 	}
 
 	a {
