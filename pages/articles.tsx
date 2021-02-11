@@ -1,10 +1,10 @@
 import React from 'react';
 import { useRouter } from 'next/router';
 
-import { Layout, Container } from '../../components';
-import ArticlesWrap from '../../components/articles/ArticlesWrap';
-import { ArticleTile } from '../../components/articles/ArticleTile';
-import { getAllPostsPreview } from '../../lib/posts';
+import { Layout, Container } from '../components';
+import ArticlesWrap from '../components/articles/ArticlesWrap';
+import { ArticleTile } from '../components/articles/ArticleTile';
+import { getAllPostsPreview } from '../lib/posts';
 
 const Articles = ({ posts, preview }) => {
 	const { pathname } = useRouter();
@@ -17,12 +17,12 @@ const Articles = ({ posts, preview }) => {
 		>
 			<Container>
 				<p className='page-intro'>
-					A collection of long-form articles and essays about new things I'm
-					exploring and learning about... 🚀
+					A collection of blog posts about new things I'm learning about... I
+					write and publish my posts on Notion!
 				</p>
 				<ArticlesWrap>
 					{posts.map((post) => (
-						<ArticleTile post={post} />
+						<ArticleTile key={post.id} post={post} />
 					))}
 				</ArticlesWrap>
 			</Container>

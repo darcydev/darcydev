@@ -2,6 +2,33 @@ import { createGlobalStyle, css } from 'styled-components';
 
 export default createGlobalStyle`
 ${() => css`
+	*,
+	*:after,
+	*:before {
+		margin: 0;
+		padding: 0;
+		box-sizing: border-box;
+		transition: inherit;
+	}
+
+	:root {
+		--text-color: #bbb;
+		--text-color-dark: #777;
+		--text-color-bright: #999;
+		--text-color-white: #fff;
+		--prim-color: #b94c50;
+
+		--transition-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
+		--animation-duration: 0.25s;
+
+		--transition-duration: 0.25s;
+		--background: #121212;
+
+		--max-width: 83.5em;
+		--max-width-bleed: 90%;
+		--max-width-narrow: 50em;
+	}
+
 	html {
 		height: 100%;
 
