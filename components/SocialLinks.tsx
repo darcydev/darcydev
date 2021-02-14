@@ -14,11 +14,11 @@ export default function SocialLinks() {
 	return (
 		<Container className='footer-container'>
 			<ul className='footerSocialLinks'>
-				<li className='footerSocialLink'>
+				{/* 				<li className='footerSocialLink'>
 					<ExternalLink href='mailto:darcyelsing@gmail.com'>
 						<MailIcon />
 					</ExternalLink>
-				</li>
+				</li> */}
 				<li className='footerSocialLink'>
 					<ExternalLink href='https://github.com/darcydev'>
 						<GitHubIcon />
