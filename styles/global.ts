@@ -17,6 +17,8 @@ ${() => css`
 		--text-color-bright: #999;
 		--text-color-white: #fff;
 		--prim-color: #b94c50;
+		--red-prim: #bf360c;
+		--red-sec: #b94c50;
 
 		--transition-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
 		--animation-duration: 0.25s;

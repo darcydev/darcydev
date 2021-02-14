@@ -18,21 +18,10 @@ export const getAllPostsPreview = async (preview) => {
       posts (orderBy: createdAt_DESC) {
 				id
 				title
-				slug
 				description
 				createdAt
 				notionUrl
-				coverImage {
-          url(transformation: {
-            image: {
-              resize: {
-                fit:scale,
-                width:750,
-                height:375
-              }
-            }
-          })
-        }
+				tags
       }
     }
 	`);

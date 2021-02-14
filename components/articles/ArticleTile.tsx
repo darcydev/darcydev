@@ -1,78 +1,57 @@
 import React from 'react';
-import Image from 'next/image';
 import styled from 'styled-components';
 
 import { Date } from '../Date';
-import { ButtonLink } from '../Button';
+import Tag from '../experiments/Tag';
+import { ExternalLink } from '../Link';
 
 interface iArticleTile {
 	post: {
 		title: string;
 		id: string;
-		slug: string;
 		createdAt: string;
-		notionUrl?: string;
-		coverImage: { url: string };
 		description: string;
+		notionUrl: string;
+		tags?: string[];
 	};
 }
 
 const ArticleTile = ({ post }: iArticleTile) => {
+	const { id, createdAt, title, description, tags, notionUrl } = post;
+
 	return (
-		<StyledArticle className='article' key={post.id}>
-			<div className='img-wrp'>
-				<Image
-					src={post.coverImage.url}
-					alt={post.title}
-					width={450}
-					height={220}
-					sizes='(min-width: 640px) 700px, 400px'
-				/>
-			</div>
-			<div className='txt-wrp'>
-				<Date date={post.createdAt} />
-				<h2>{post.title}</h2>
-				<p>{post.description}</p>
-			</div>
-			<div className='cta-wrp'>
-				<ButtonLink href={post.notionUrl} newTab={true}>
-					<span>Read article</span>
-				</ButtonLink>
-			</div>
+		<StyledArticle className='article' key={id}>
+			<ExternalLink href={notionUrl} newTab={true}>
+				<>
+					<Date date={createdAt} />
+					<h2>{title}</h2>
+					<p>{description}</p>
+					{tags.length > 0 && (
+						<ul>
+							{tags.map((tag) => (
+								<Tag key={tag}>{tag}</Tag>
+							))}
+						</ul>
+					)}
+				</>
+			</ExternalLink>
 		</StyledArticle>
 	);
 };
 
 const StyledArticle = styled.article`
-	flex: 0 0 48%;
-	margin: 10px;
-	position: relative;
+	flex: 1 0 100%;
+	margin: 25px 0;
+	transition: all 0.25s;
 
-	@media (max-width: 650px) {
-		flex: 0 0 100%;
-		margin: 0;
-	}
-
-	.img-wrp {
-		img {
-			transition: all var(--animation-duration)
-				var(--transition-timing-function);
-			object-fit: cover;
-			width: 100%;
-			object-fit: cover;
-			margin-bottom: 0.4em;
-			transform: scale(1);
-			transition: 5s all;
-
-			&:hover {
-				transform: scale(1.1);
-			}
+	&:hover {
+		h2 {
+			color: var(--red-prim);
 		}
 	}
 
-	.txt-wrp {
-		padding: 15px 20px 70px 20px;
-		background: #272727;
+	a {
+		text-decoration: none;
 
 		time {
 			color: #fff;
@@ -80,16 +59,14 @@ const StyledArticle = styled.article`
 		}
 
 		h2 {
-			font-size: 1.17em;
-			margin-bottom: 0.3em;
+			font-size: 2em;
+			margin-bottom: 0.25em;
+			cursor: pointer;
 		}
-	}
 
-	.cta-wrp {
-		position: absolute;
-		left: 0;
-		bottom: 0;
-		width: 100%;
+		p {
+			margin: 0 0 5px 0;
+		}
 	}
 `;
 
