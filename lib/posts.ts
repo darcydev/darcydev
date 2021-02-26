@@ -20,7 +20,7 @@ export const getAllPostsPreview = async () => {
 				title
 				description
 				createdAt
-				notionUrl
+        notionId
 				tags
       }
     }

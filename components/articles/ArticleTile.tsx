@@ -1,27 +1,41 @@
+/* eslint-disable @typescript-eslint/no-use-before-define */
 import React from 'react';
 import styled from 'styled-components';
 
 import Date from '../Date';
 import Tag from '../experiments/Tag';
-import { ExternalLink } from '../Link';
+import { InternalLink } from '../Link';
 
-interface iArticleTile {
-  post: {
-    title: string;
-    id: string;
-    createdAt: string;
-    description: string;
-    notionUrl: string;
-    tags?: string[];
-  };
+interface Post {
+  title: string;
+  id: string;
+  createdAt: string;
+  description: string;
+  notionId: string;
+  tags?: string[];
 }
 
-const ArticleTile = ({ post }: iArticleTile) => {
-  const { id, createdAt, title, description, tags, notionUrl } = post;
+interface ComponentProps extends React.HTMLAttributes<HTMLElement> {
+  post: Post;
+}
+
+const defaultProps: ComponentProps = {
+  post: {
+    title: '1',
+    id: '1',
+    createdAt: '1',
+    description: '1',
+    notionId: '1',
+    tags: ['1'],
+  },
+};
+
+const ArticleTile: React.FC<ComponentProps> = ({ post }) => {
+  const { id, createdAt, title, description, tags, notionId } = post;
 
   return (
     <StyledArticle className="article" key={id}>
-      <ExternalLink href={notionUrl} newTab={true}>
+      <InternalLink href={`/articles/${notionId}`}>
         <>
           <Date date={createdAt} />
           <h2>{title}</h2>
@@ -34,10 +48,14 @@ const ArticleTile = ({ post }: iArticleTile) => {
             </ul>
           )}
         </>
-      </ExternalLink>
+      </InternalLink>
     </StyledArticle>
   );
 };
+
+ArticleTile.defaultProps = defaultProps;
+
+export default ArticleTile;
 
 const StyledArticle = styled.article`
   flex: 1 0 100%;
@@ -69,5 +87,3 @@ const StyledArticle = styled.article`
     }
   }
 `;
-
-export { ArticleTile };

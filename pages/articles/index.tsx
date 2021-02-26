@@ -3,10 +3,10 @@ import { useRouter } from 'next/router';
 import { Layout } from '../../components';
 import Container from '../../components/layout/container';
 import ArticlesWrap from '../../components/articles/ArticlesWrap';
-import { ArticleTile } from '../../components/articles/ArticleTile';
+import ArticleTile from '../../components/articles/ArticleTile';
 import { getAllPostsPreview } from '../../lib/posts';
 
-const Articles = ({ posts, preview }) => {
+const Articles = ({ posts }) => {
   const { pathname } = useRouter();
 
   return (
@@ -30,11 +30,11 @@ const Articles = ({ posts, preview }) => {
   );
 };
 
-export const getStaticProps = async ({ preview = false }) => {
+export const getStaticProps = async () => {
   const posts = (await getAllPostsPreview()) || [];
 
   return {
-    props: { posts, preview },
+    props: { posts },
     revalidate: 1,
   };
 };

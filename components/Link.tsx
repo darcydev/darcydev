@@ -1,35 +1,49 @@
-import { ReactNode, ReactElement } from 'react';
+import React from 'react';
 import Link from 'next/link';
 
-interface iInternalLink {
-  children: ReactNode;
-  href: string;
-}
-
-interface iExternalLink {
+interface InternalLinkProps {
   href: string;
   newTab?: boolean;
-  children: ReactElement;
+  children: React.ReactNode;
 }
 
-export const InternalLink = ({ href, children }: iInternalLink) => (
+const internalLinkDefaultProps: InternalLinkProps = {
+  href: '/',
+  newTab: true,
+  children: <div>hello</div>,
+};
+
+export const InternalLink: React.FC<InternalLinkProps> = ({
+  href,
+  children,
+}) => (
   <Link href={href}>
     <a>{children}</a>
   </Link>
 );
 
-export const ExternalLink = ({
+InternalLink.defaultProps = internalLinkDefaultProps;
+
+interface ExternalLinkProps {
+  href: string;
+  newTab?: boolean;
+  children: React.ReactElement;
+}
+
+const externalLinkDefaultProps: ExternalLinkProps = {
+  href: '/',
+  newTab: true,
+  children: <div>hello</div>,
+};
+
+export const ExternalLink: React.FC<ExternalLinkProps> = ({
   href,
   newTab = true,
   children,
-}: iExternalLink) => {
-  return (
-    <a
-      href={href}
-      target={newTab ? '_blank' : null}
-      rel={newTab ? 'noreferrer noopener' : null}
-    >
-      {children}
-    </a>
-  );
-};
+}) => (
+  <a href={href} target={newTab ? '_blank' : null} rel="noreferrer">
+    {children}
+  </a>
+);
+
+ExternalLink.defaultProps = externalLinkDefaultProps;

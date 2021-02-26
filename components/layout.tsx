@@ -1,5 +1,4 @@
-import { useState, createContext, ReactNode } from 'react';
-
+import React, { createContext } from 'react';
 import { StyledMain } from './styles/layout.styles';
 import Header from './header/header';
 import Footer from './layout/footer';
@@ -7,26 +6,32 @@ import Nav from './nav';
 import MobileNav from './nav/mobile-nav';
 import NextHead from './NextHead';
 
-interface ILayout {
-  children: ReactNode;
+interface ComponentProps extends React.HTMLAttributes<HTMLElement> {
+  children: React.ReactNode;
   pathname: string;
   pageTitle: string;
   pageDescription?: string;
 }
 
-//@ts-ignore
+const defaultProps: ComponentProps = {
+  children: <div>hello</div>,
+  pathname: '/',
+  pageTitle: 'Darcy Price',
+  pageDescription: 'Developer',
+};
+
 export const MenuContext = createContext({
   menuOpen: null,
   toggleMenuOpen: null,
 });
 
-const Layout = ({
+const Layout: React.FC<ComponentProps> = ({
   children,
   pathname,
   pageTitle,
   pageDescription,
-}: ILayout) => {
-  const [menuOpen, setMenuOpen] = useState(false);
+}) => {
+  const [menuOpen, setMenuOpen] = React.useState(false);
 
   const toggleMenuOpen = () => {
     menuOpen ? setMenuOpen(false) : setMenuOpen(true);
@@ -48,5 +53,7 @@ const Layout = ({
     </MenuContext.Provider>
   );
 };
+
+Layout.defaultProps = defaultProps;
 
 export { Layout };
