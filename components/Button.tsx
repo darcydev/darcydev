@@ -1,10 +1,10 @@
-import { ReactElement } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 import { FiExternalLink } from 'react-icons/fi';
-import { ExternalLink } from './Link';
+import Link from './links/Link';
 
 interface iButtonLink {
-  children: ReactElement;
+  children: React.ReactElement;
   newTab?: boolean;
   href: string;
 }
@@ -12,7 +12,7 @@ interface iButtonLink {
 export const ButtonLink = ({ href, newTab = true, children }: iButtonLink) => {
   return (
     <StyledContainer newTab={newTab}>
-      <ExternalLink href={href} newTab={newTab}>
+      <Link href={href} internalLink={false} newTab={newTab}>
         {newTab ? (
           <>
             {children}
@@ -21,7 +21,7 @@ export const ButtonLink = ({ href, newTab = true, children }: iButtonLink) => {
         ) : (
           children
         )}
-      </ExternalLink>
+      </Link>
     </StyledContainer>
   );
 };

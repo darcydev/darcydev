@@ -3,10 +3,9 @@ import React from 'react';
 import styled from 'styled-components';
 import Tilt from 'react-tilt';
 import { ExternalLink as ExternalLinkIcon } from 'react-feather';
-
 import Tag from './Tag';
 import { formatDate } from '../../utils/formateDate';
-import { ExternalLink } from '../Link';
+import Link from '../links/Link';
 
 interface ComponentProps {
   experiment: {
@@ -33,7 +32,7 @@ const ExperimentCard: React.FC<ComponentProps> = ({ experiment }) => {
 
   return (
     <StyledTilter>
-      <ExternalLink href={`${externalUrl}`}>
+      <Link href={`${externalUrl}`} internalLink={false}>
         <>
           <div className="experiment-meta">
             <time className="experiment-date">{formatDate(createdAt)}</time>
@@ -49,7 +48,7 @@ const ExperimentCard: React.FC<ComponentProps> = ({ experiment }) => {
             ))}
           </ul>
         </>
-      </ExternalLink>
+      </Link>
     </StyledTilter>
   );
 };

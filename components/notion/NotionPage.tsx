@@ -8,22 +8,22 @@ import {
 } from 'react-notion-x';
 import styled from 'styled-components';
 
-export default function NotionPage({ recordMap }) {
-  return (
-    <StyledContainer>
-      <NotionRenderer
-        components={{
-          code: Code,
-          collection: Collection,
-          collectionRow: CollectionRow,
-        }}
-        recordMap={recordMap}
-        fullPage
-        darkMode
-      />
-    </StyledContainer>
-  );
-}
+const NotionPage = ({ recordMap, fullPage = false }) => (
+  <StyledContainer fullPage={fullPage}>
+    <NotionRenderer
+      components={{
+        code: Code,
+        collection: Collection,
+        collectionRow: CollectionRow,
+      }}
+      recordMap={recordMap}
+      fullPage
+      darkMode
+    />
+  </StyledContainer>
+);
+
+export default NotionPage;
 
 const StyledContainer = styled.div`
   .notion {
@@ -108,6 +108,15 @@ const StyledContainer = styled.div`
               }
             }
           }
+        }
+
+        main.notion-full-width {
+          --notion-max-width: ${({ fullPage }) =>
+            fullPage ? 'calc(min(1920px), 98vw))' : 'unset'};
+          padding-left: ${({ fullPage }) =>
+            fullPage ? 'calc(min(96px), 8vw))' : 'unset'};
+          padding-right: ${({ fullPage }) =>
+            fullPage ? 'calc(min(96px), 8vw))' : 'unset'};
         }
       }
     }

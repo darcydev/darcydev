@@ -1,25 +1,25 @@
 import React from 'react';
-import { GitHubIcon, TwitterIcon, LinkedInIcon, MediumIcon } from './Icons';
-import { ExternalLink } from './Link';
+import { GitHubIcon, TwitterIcon, LinkedInIcon } from './Icons';
+import Link from '../components/links/Link';
 
 export default function SocialLinks() {
   return (
     <div className="footer-container">
       <ul className="footerSocialLinks">
         <li className="footerSocialLink">
-          <ExternalLink href="https://github.com/darcydev">
+          <Link href="https://github.com/darcydev">
             <GitHubIcon />
-          </ExternalLink>
+          </Link>
         </li>
         <li className="footerSocialLink">
-          <ExternalLink href="https://linkedin.com/in/darcyprice/">
+          <Link href="https://linkedin.com/in/darcyprice/">
             <LinkedInIcon />
-          </ExternalLink>
+          </Link>
         </li>
         <li className="footerSocialLink">
-          <ExternalLink href="https://twitter.com/mrdarcyprice">
+          <Link href="https://twitter.com/mrdarcyprice">
             <TwitterIcon />
-          </ExternalLink>
+          </Link>
         </li>
         {/*         <li className="footerSocialLink">
           <ExternalLink href="https://mrdarcyprice.medium.com/">

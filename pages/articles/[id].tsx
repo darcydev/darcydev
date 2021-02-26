@@ -4,7 +4,6 @@ import { getPageTitle, getAllPagesInSpace } from 'notion-utils';
 import { NotionAPI } from 'notion-client';
 import NotionPage from '../../components/notion/NotionPage';
 import Layout from '../../components/layout/Layout';
-import Page404 from '../../components/Page404';
 
 const notion = new NotionAPI();
 

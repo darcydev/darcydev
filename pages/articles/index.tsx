@@ -5,7 +5,7 @@ import Container from '../../components/layout/Container';
 import ArticlesWrap from '../../components/articles/ArticlesWrap';
 import ArticleTile from '../../components/articles/ArticleTile';
 import { getAllPostsPreview } from '../../lib/posts';
-import { ExternalLink } from '../../components/Link';
+import Link from '../../components/links/Link';
 
 const Articles = ({ posts }) => {
   const { pathname } = useRouter();
@@ -20,13 +20,13 @@ const Articles = ({ posts }) => {
         <p className="page-intro">
           A collection of blog posts about new things that I am learning about..
           The articles are written and published on{' '}
-          <ExternalLink href="https://www.notion.so">
+          <Link href="https://www.notion.so">
             <span>Notion</span>
-          </ExternalLink>{' '}
+          </Link>{' '}
           powered by{' '}
-          <ExternalLink href="https://github.com/NotionX/react-notion-x">
+          <Link href="https://github.com/NotionX/react-notion-x">
             <span>react-notion-x</span>
-          </ExternalLink>{' '}
+          </Link>{' '}
           🚀
         </p>
         <ArticlesWrap>

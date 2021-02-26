@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-use-before-define */
 import React from 'react';
 import styled from 'styled-components';
-import { InternalLink } from '../Link';
+import Link from '../links/Link';
 
 interface ComponentProps {
   href: string;
@@ -15,7 +15,9 @@ const componentDefaultProps: ComponentProps = {
 
 const NavItem = ({ href, children }) => (
   <StyledLi>
-    <InternalLink href={href}>{children}</InternalLink>
+    <Link href={href} internalLink>
+      {children}
+    </Link>
   </StyledLi>
 );
 

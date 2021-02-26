@@ -3,7 +3,7 @@ import React from 'react';
 import styled from 'styled-components';
 import Date from '../Date';
 import Tag from '../experiments/Tag';
-import { InternalLink } from '../Link';
+import Link from '../links/Link';
 
 interface Post {
   title: string;
@@ -34,7 +34,7 @@ const ArticleTile: React.FC<ComponentProps> = ({ post }) => {
 
   return (
     <StyledArticle className="article" key={id}>
-      <InternalLink href={`/articles/${notionId}`}>
+      <Link href={`/articles/${notionId}`} internalLink>
         <>
           <Date date={createdAt} />
           <h2>{title}</h2>
@@ -47,7 +47,7 @@ const ArticleTile: React.FC<ComponentProps> = ({ post }) => {
             </ul>
           )}
         </>
-      </InternalLink>
+      </Link>
     </StyledArticle>
   );
 };

@@ -3,7 +3,7 @@ import React, { useContext } from 'react';
 import styled from 'styled-components';
 import { MenuContext } from '../layout/Layout';
 import Container from '../layout/Container';
-import { InternalLink } from '../Link';
+import Link from '../links/Link';
 import Hamburger from './Hamburger';
 import activeNavItems from '../../constants/nav';
 import NavItem from './NavItem';
@@ -18,9 +18,9 @@ const Nav = () => {
       <Container>
         <nav className="navWrapper">
           <div className="navLeft">
-            <InternalLink href="/">
+            <Link href="/" internalLink>
               <span>Darcy</span>
-            </InternalLink>
+            </Link>
           </div>
 
           <div className="navRight">

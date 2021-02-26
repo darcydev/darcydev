@@ -5,7 +5,7 @@ import { useRouter } from 'next/router';
 import styled from 'styled-components';
 import Layout from '../components/layout/Layout';
 import Container from '../components/layout/Container';
-import { ExternalLink } from '../components/Link';
+import Link from '../components/links/Link';
 import { getAllExperiments } from '../lib/experiments';
 import ExperimentCards from '../components/experiments/Cards';
 
@@ -56,13 +56,19 @@ const Index: React.FC<ComponentProps> = ({ experiments }) => {
             </p>
             <p>
               Inspired by the{' '}
-              <ExternalLink href="https://github.com/getify/You-Dont-Know-JS">
+              <Link
+                href="https://github.com/getify/You-Dont-Know-JS"
+                internalLink={false}
+              >
                 <span>YDKJS series</span>
-              </ExternalLink>{' '}
+              </Link>{' '}
               and{' '}
-              <ExternalLink href="https://betterprogramming.pub/the-pragmatic-programmer-20th-anniversary-edition-15e19ca76e40">
+              <Link
+                href="https://betterprogramming.pub/the-pragmatic-programmer-20th-anniversary-edition-15e19ca76e40"
+                internalLink={false}
+              >
                 <span>The Pragmatic Programmar</span>
-              </ExternalLink>
+              </Link>
               , I have crafted the ability to both write components in vanilla
               ES6 JavaScript, but can also leverage existing libraries when it
               makes sense to do so.
