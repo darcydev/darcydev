@@ -5,7 +5,7 @@ import Image from 'next/image';
 import styled from 'styled-components';
 import Layout from '../components/layout/Layout';
 import Container from '../components/layout/Container';
-import { calculateAge } from '../utils/calculateAge';
+import calculateAge from '../utils/calculateAge';
 
 const About = () => {
   const { pathname } = useRouter();
