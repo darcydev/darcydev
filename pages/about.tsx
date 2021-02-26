@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-use-before-define */
 import React from 'react';
 import { useRouter } from 'next/router';
 import Image from 'next/image';
@@ -5,33 +6,6 @@ import styled from 'styled-components';
 import Layout from '../components/layout/Layout';
 import Container from '../components/layout/Container';
 import { calculateAge } from '../utils/calculateAge';
-
-const StyledSection = styled.section`
-  .postContent {
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-
-    .avatarImage {
-      margin: 0 0 1.5em 0;
-
-      img {
-        border-radius: 100%;
-        height: 150px;
-        width: 150px;
-
-        @media (min-width: 759px) {
-          height: 200px;
-          width: 200px;
-        }
-
-        @media (min-width: 1400px) {
-          width: 210px;
-        }
-      }
-    }
-  }
-`;
 
 const About = () => {
   const { pathname } = useRouter();
@@ -90,3 +64,30 @@ const About = () => {
 };
 
 export default About;
+
+const StyledSection = styled.section`
+  .postContent {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+
+    .avatarImage {
+      margin: 0 0 1.5em 0;
+
+      img {
+        border-radius: 100%;
+        height: 150px;
+        width: 150px;
+
+        @media (min-width: 759px) {
+          height: 200px;
+          width: 200px;
+        }
+
+        @media (min-width: 1400px) {
+          width: 210px;
+        }
+      }
+    }
+  }
+`;

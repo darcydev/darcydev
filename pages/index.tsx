@@ -1,12 +1,13 @@
+/* eslint-disable @typescript-eslint/no-use-before-define */
 import React from 'react';
 import Image from 'next/image';
 import { useRouter } from 'next/router';
 import styled from 'styled-components';
 import Layout from '../components/layout/Layout';
 import Container from '../components/layout/Container';
-import ExperimentCard from '../components/experiments/Card';
 import { ExternalLink } from '../components/Link';
 import { getAllExperiments } from '../lib/experiments';
+import ExperimentCards from '../components/experiments/Cards';
 
 interface Experiment {
   createdAt: string;
@@ -36,61 +37,53 @@ const defaultProps: ComponentProps = {
   preview: false,
 };
 
-const Index: React.FC<ComponentProps> = ({ experiments, preview }) => {
+const Index: React.FC<ComponentProps> = ({ experiments }) => {
   const { pathname } = useRouter();
 
   return (
     <Layout pathname={pathname} pageTitle="Darcy Price">
-      <StyledIndexPage>
+      <Container>
         <StyledDesignSection>
-          <Container className="container">
-            <div className="text">
-              <h2>Code as a Craft 👨‍🔧</h2>
-              <p>
-                I strive to continually craft my skills as a developer to build
-                incredible products. I am particularly passionate about crafting
-                reusable, decoupled, performant and maintainable code.
-              </p>
-              <p>
-                Inspired by the{' '}
-                <ExternalLink href="https://github.com/getify/You-Dont-Know-JS">
-                  <span>YDKJS series</span>
-                </ExternalLink>
-                , I have crafted the ability to both write components in vanilla
-                ES6 JavaScript, but can also leverage existing libraries when it
-                makes sense to do so.
-              </p>
-              <p>
-                Fundamentally, I possess an ability and willingness to learn new
-                programming languages, frameworks and paradigms.
-              </p>
-            </div>
-            <div className="image">
-              <Image
-                src="/images/article-preview.png"
-                height={200}
-                width={350}
-                sizes="(min-width: 759px) 800px"
-              />
-            </div>
-          </Container>
+          <div className="txt-wrp">
+            <h2>Code as a Craft 👨‍🔧</h2>
+            <p>
+              I strive to continually craft my skills as a developer to build
+              incredible products. I am particularly passionate about crafting
+              reusable, decoupled, performant and maintainable code.
+            </p>
+            <p>
+              Inspired by the{' '}
+              <ExternalLink href="https://github.com/getify/You-Dont-Know-JS">
+                <span>YDKJS series</span>
+              </ExternalLink>
+              , I have crafted the ability to both write components in vanilla
+              ES6 JavaScript, but can also leverage existing libraries when it
+              makes sense to do so.
+            </p>
+            <p>
+              Fundamentally, I possess an ability and willingness to learn new
+              programming languages, frameworks and paradigms.
+            </p>
+          </div>
+          <div className="img-wrp">
+            <Image
+              src="/images/craft.jpg"
+              height={200}
+              width={350}
+              sizes="(min-width: 759px) 800px"
+            />
+          </div>
         </StyledDesignSection>
         <StyledExperimentsSection>
-          <Container>
-            <h2>Experiments</h2>
-            <p className="section-intro max-width">
-              I try to stage little experiments to help me learn things I find
-              interesting. I almost never finish them 🙈. But I learn a lot
-              anyways
-            </p>
-            <section className="experiments">
-              {experiments.map((experiment) => (
-                <ExperimentCard key={experiment.id} experiment={experiment} />
-              ))}
-            </section>
-          </Container>
+          <h2>Experiments</h2>
+          <p className="section-intro max-width">
+            I try to stage little experiments to help me learn things I find
+            interesting. I almost never finish them 🙈. But I learn a lot
+            anyways
+          </p>
+          <ExperimentCards experiments={experiments} />
         </StyledExperimentsSection>
-      </StyledIndexPage>
+      </Container>
     </Layout>
   );
 };
@@ -108,67 +101,45 @@ Index.defaultProps = defaultProps;
 
 export default Index;
 
-const StyledIndexPage = styled.section`
-  h1 {
-    word-spacing: -10px;
-  }
-
-  @media (min-width: 1024px) {
-    h1 {
-      word-spacing: -20px;
-    }
-  }
-`;
-
-const StyledDesignSection = styled.div`
+const StyledDesignSection = styled.section`
   background: #fff url('/images/background-pattern.jpg');
-  padding: 60px 0;
+  padding: 60px 20px;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
 
-  .container {
-    display: flex;
-    align-items: center;
-    flex-wrap: wrap;
+  @media (max-width: 1200px) {
+    flex-direction: column;
   }
 
-  .container .text,
-  .container .image {
-    flex: 1 100%;
+  .txt-wrp {
+    margin: 0 30px 0 0;
 
-    @media (min-width: 759px) {
-      flex: 1;
+    @media (max-width: 1200px) {
+      margin: 0 0 30px 0;
+    }
 
-      .text {
-        margin-right: 5%;
+    h2 {
+      color: #000;
+      margin-bottom: 1rem;
+    }
+
+    p {
+      color: #000;
+      background: #fff;
+
+      &:last-child {
+        margin-bottom: 0;
       }
     }
   }
 
-  img {
-    object-fit: cover;
-  }
+  .img-wrp {
+    height: 100%;
+    width: 100%;
 
-  h2 {
-    font-size: 1.75em;
-    color: #000;
-    margin-bottom: 1rem;
-
-    @media (min-width: 1024px) {
-      font-size: 2.75em;
-    }
-  }
-
-  p {
-    color: #000;
-    background: #fff;
-
-    &:last-child {
-      margin-bottom: 0;
-    }
-  }
-
-  a {
-    &:hover {
-      color: inherit;
+    img {
+      object-fit: cover;
     }
   }
 `;
@@ -178,29 +149,6 @@ const StyledExperimentsSection = styled.section`
   margin-bottom: 40px;
 
   h2 {
-    font-size: 1.75em;
     margin-bottom: 1rem;
-  }
-
-  .section {
-    display: flex;
-    flex-wrap: wrap;
-  }
-
-  .experiments {
-    display: flex;
-    flex-wrap: wrap;
-  }
-
-  .experiment-meta {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
-
-  @media all and (min-width: 1020px) {
-    h2 {
-      font-size: 2.75em;
-    }
   }
 `;

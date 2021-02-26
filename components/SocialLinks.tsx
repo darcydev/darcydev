@@ -21,11 +21,11 @@ export default function SocialLinks() {
             <TwitterIcon />
           </ExternalLink>
         </li>
-        <li className="footerSocialLink">
+        {/*         <li className="footerSocialLink">
           <ExternalLink href="https://mrdarcyprice.medium.com/">
             <MediumIcon />
           </ExternalLink>
-        </li>
+        </li> */}
       </ul>
     </div>
   );

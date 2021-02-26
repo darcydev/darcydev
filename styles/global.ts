@@ -1,6 +1,6 @@
 import { createGlobalStyle, css } from 'styled-components';
 
-export default createGlobalStyle`
+const GlobalStyles = createGlobalStyle`
 ${() => css`
   *,
   *:after,
@@ -17,8 +17,8 @@ ${() => css`
     --text-color-bright: #999;
     --text-color-white: #fff;
     --prim-color: #b94c50;
-    --red-prim: #bf360c;
-    --red-sec: #b94c50;
+    --prim-red: #bf360c;
+    --sec-red: #b94c50;
     --prim-purple: #b439df;
     --prim-pink: #e5337e;
 
@@ -127,7 +127,7 @@ ${() => css`
         color: var(--prim-purple);
       }
       a:focus {
-        outline-color: var(--prim-color);
+        outline-color: var(--sec-red);
         text-decoration: none;
       }
       a > img,
@@ -176,7 +176,7 @@ ${() => css`
         height: 100%;
         width: 4px;
         display: inline-block;
-        background: var(--prim-color);
+        background: var(--sec-red);
         position: absolute;
         top: 0;
         left: 0;
@@ -236,3 +236,5 @@ ${() => css`
   }
 `}
 `;
+
+export default GlobalStyles;

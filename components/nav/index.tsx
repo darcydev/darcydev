@@ -19,7 +19,7 @@ const Nav = () => {
         <nav className="navWrapper">
           <div className="navLeft">
             <InternalLink href="/">
-              <span>Darcy Price</span>
+              <span>Darcy</span>
             </InternalLink>
           </div>
 
@@ -59,7 +59,6 @@ const NavSection = styled.header`
   .navLeft {
     a {
       text-decoration: none;
-      text-transform: uppercase;
 
       span {
         font-size: 1.25em;

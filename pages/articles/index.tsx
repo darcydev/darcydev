@@ -26,7 +26,8 @@ const Articles = ({ posts }) => {
           powered by{' '}
           <ExternalLink href="https://github.com/NotionX/react-notion-x">
             <span>react-notion-x</span>
-          </ExternalLink>
+          </ExternalLink>{' '}
+          🚀
         </p>
         <ArticlesWrap>
           {posts.map((post) => (

@@ -31,7 +31,7 @@ const StyledContainer = styled.div`
   align-items: center;
   justify-content: center;
   text-transform: uppercase;
-  background: var(--prim-color);
+  background: var(--sec-red);
   color: var(--text-color-white);
   padding: 10px 20px;
   border-radius: 5px;

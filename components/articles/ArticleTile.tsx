@@ -1,7 +1,6 @@
 /* eslint-disable @typescript-eslint/no-use-before-define */
 import React from 'react';
 import styled from 'styled-components';
-
 import Date from '../Date';
 import Tag from '../experiments/Tag';
 import { InternalLink } from '../Link';
@@ -64,7 +63,7 @@ const StyledArticle = styled.article`
 
   &:hover {
     h2 {
-      color: var(--red-prim);
+      color: var(--prim-red);
     }
   }
 

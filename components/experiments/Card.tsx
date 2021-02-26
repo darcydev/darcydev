@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-use-before-define */
 import React from 'react';
 import styled from 'styled-components';
 import Tilt from 'react-tilt';
@@ -7,17 +8,27 @@ import Tag from './Tag';
 import { formatDate } from '../../utils/formateDate';
 import { ExternalLink } from '../Link';
 
-interface iCard {
+interface ComponentProps {
   experiment: {
-    title: string;
-    description: string;
     createdAt: string;
+    description: string;
     externalUrl: string;
     tags: string[];
+    title: string;
   };
 }
 
-const Card = ({ experiment }: iCard) => {
+const defaultProps: ComponentProps = {
+  experiment: {
+    createdAt: '1',
+    description: '1',
+    externalUrl: 'https://darcydev.com',
+    tags: ['javascript'],
+    title: '1',
+  },
+};
+
+const ExperimentCard: React.FC<ComponentProps> = ({ experiment }) => {
   const { title, description, createdAt, tags, externalUrl } = experiment;
 
   return (
@@ -43,6 +54,10 @@ const Card = ({ experiment }: iCard) => {
   );
 };
 
+ExperimentCard.defaultProps = defaultProps;
+
+export default ExperimentCard;
+
 const StyledTilter = styled(Tilt)`
   padding: 40px 0;
   background: #202020;
@@ -63,18 +78,15 @@ const StyledTilter = styled(Tilt)`
   a {
     text-decoration: none;
 
-    &:hover {
-      text-decoration: none;
-    }
+    .experiment-meta {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
 
-    time {
-      font-size: 0.75em;
-      color: #808080;
-    }
-
-    h3 {
-      margin-bottom: 0.5em;
-      font-size: 1em;
+      time {
+        font-size: 0.85em;
+        color: #808080;
+      }
     }
 
     ul {
@@ -84,5 +96,3 @@ const StyledTilter = styled(Tilt)`
     }
   }
 `;
-
-export default Card;

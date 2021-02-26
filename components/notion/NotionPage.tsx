@@ -26,6 +26,15 @@ export default function NotionPage({ recordMap }) {
 }
 
 const StyledContainer = styled.div`
+  .notion {
+    --notion-max-width: 720px;
+    --notion-header-height: 54px;
+  }
+
+  .index-page {
+    --notion-max-width: 900px;
+  }
+
   .notion-app {
     background: unset;
 
@@ -36,7 +45,19 @@ const StyledContainer = styled.div`
 
       .notion-page-scroller {
         main.notion-page {
+          margin: 0 12px;
+          width: var(--notion-max-width);
+          padding-bottom: calc(max(5vh, 32px)) !important;
+          line-height: 1.65;
+
+          @media (max-width: 720px) {
+            padding-left: 2vw;
+            padding-right: 2vw;
+          }
+
           .notion-title {
+            display: block;
+            text-align: center;
           }
 
           .notion-collection-row {
@@ -45,6 +66,10 @@ const StyledContainer = styled.div`
           .notion-page-content {
             article {
               .notion-table-of-contents {
+                border-bottom: 1px solid #fff;
+                padding: 20px 0;
+                margin-bottom: 20px;
+
                 a.notion-table-of-contents-item {
                   span {
                     color: #fff;
@@ -55,6 +80,14 @@ const StyledContainer = styled.div`
                     text-decoration: none;
                   }
                 }
+              }
+
+              .notion-text {
+                padding: 0.5em 2px;
+              }
+
+              .notion-code {
+                background: #000;
               }
 
               .notion-link {
