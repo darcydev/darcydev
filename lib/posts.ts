@@ -1,7 +1,7 @@
-import { fetchAPI } from '.';
+import fetchAPI from '.';
 
 export const getPostWithSlug = async () => {
-	const { posts } = await fetchAPI(`
+  const { posts } = await fetchAPI(`
 	{
 		posts {
 			slug
@@ -9,11 +9,11 @@ export const getPostWithSlug = async () => {
 	}
 `);
 
-	return posts;
+  return posts;
 };
 
-export const getAllPostsPreview = async (preview) => {
-	const { posts } = await fetchAPI(`
+export const getAllPostsPreview = async () => {
+  const { posts } = await fetchAPI(`
     {
       posts (orderBy: createdAt_DESC) {
 				id
@@ -26,5 +26,5 @@ export const getAllPostsPreview = async (preview) => {
     }
 	`);
 
-	return posts;
+  return posts;
 };

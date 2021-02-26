@@ -1,5 +1,5 @@
 module.exports = {
-	images: {
-		domains: ['media.graphcms.com', 'via.placeholder.com'],
-	},
+  images: {
+    domains: ['media.graphcms.com', 'via.placeholder.com']
+  }
 };

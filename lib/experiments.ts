@@ -1,7 +1,7 @@
-import { fetchAPI } from '.';
+import fetchAPI from '.';
 
 export const getAllExperiments = async (preview) => {
-	const { experiments } = await fetchAPI(`
+  const { experiments } = await fetchAPI(`
 	{
 		experiments (orderBy: createdAt_DESC) {
 			id
@@ -14,5 +14,5 @@ export const getAllExperiments = async (preview) => {
 	}
 `);
 
-	return experiments;
+  return experiments;
 };

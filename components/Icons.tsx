@@ -4,30 +4,30 @@ import { AiOutlineMedium } from 'react-icons/ai';
 import { HiOutlineMail } from 'react-icons/hi';
 
 const IconStyles = css`
-	height: 1.2em;
-	width: 1.2em;
+  height: 1.2em;
+  width: 1.2em;
 `;
 
 export const GitHubIcon = styled(GitHub)`
-	${IconStyles}
+  ${IconStyles}
 `;
 
 export const TwitterIcon = styled(Twitter)`
-	${IconStyles}
+  ${IconStyles}
 `;
 
 export const CodepenIcon = styled(Codepen)`
-	${IconStyles}
+  ${IconStyles}
 `;
 
 export const LinkedInIcon = styled(Linkedin)`
-	${IconStyles}
+  ${IconStyles}
 `;
 
 export const MediumIcon = styled(AiOutlineMedium)`
-	${IconStyles}
+  ${IconStyles}
 `;
 
 export const MailIcon = styled(HiOutlineMail)`
-	${IconStyles}
+  ${IconStyles}
 `;

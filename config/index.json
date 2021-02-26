@@ -1,15 +1,15 @@
 {
-	"author": {
-		"name": "Darcy Price",
-		"title": "Full-Stack Developer",
-		"twitterHandle": "@darcydev"
-	},
-	"site": {
-		"siteUrl": "https://darcydev.com",
-		"siteName": "Darcy",
-		"siteTitle": "Developer",
-		"siteDescription": "Peacock is a Nextjs starter for Personal Sites/Portfolios made by @vick_onrails",
-		"keywords": "JavaScript, NextJS, Software Engineer, Australia Software Engineer, Sydney Software Engineer, JavaScript Engineer Australia, ReactJS Engineer Australia, Darcy Price",
-		"siteImage": "../public/Logo.png"
-	}
+  "author": {
+    "name": "Darcy Price",
+    "title": "Full-Stack Developer",
+    "twitterHandle": "@darcydev"
+  },
+  "site": {
+    "siteUrl": "https://darcydev.com",
+    "siteName": "Darcy",
+    "siteTitle": "Developer",
+    "siteDescription": "Peacock is a Nextjs starter for Personal Sites/Portfolios made by @vick_onrails",
+    "keywords": "JavaScript, NextJS, Software Engineer, Australia Software Engineer, Sydney Software Engineer, JavaScript Engineer Australia, ReactJS Engineer Australia, Darcy Price",
+    "siteImage": "../public/Logo.png"
+  }
 }
