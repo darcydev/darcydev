@@ -91,18 +91,19 @@ const StyledContainer = styled.div`
               }
 
               .notion-link {
-                border-width: 3px;
+                border-width: 2px;
                 border-image: linear-gradient(
                   90.68deg,
-                  #b439df 0.26%,
-                  #e5337e 102.37%
+                  var(--prim-purple) 0.26%,
+                  var(--prim-pink) 102.37%
                 );
                 border-image-slice: 1;
                 opacity: 1;
 
                 &:hover {
                   text-decoration: none;
-                  color: #b439df;
+                  color: var(--prim-purple);
+                  border-width: 0;
                 }
               }
             }

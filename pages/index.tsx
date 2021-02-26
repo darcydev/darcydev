@@ -42,7 +42,10 @@ const Index: React.FC<ComponentProps> = ({ experiments }) => {
 
   return (
     <Layout pathname={pathname} pageTitle="Darcy Price">
-      <Container>
+      <Container
+        width="full"
+        style={{ background: `#fff url('/images/background-pattern.jpg')` }}
+      >
         <StyledDesignSection>
           <div className="txt-wrp">
             <h2>Code as a Craft 👨‍🔧</h2>
@@ -55,6 +58,10 @@ const Index: React.FC<ComponentProps> = ({ experiments }) => {
               Inspired by the{' '}
               <ExternalLink href="https://github.com/getify/You-Dont-Know-JS">
                 <span>YDKJS series</span>
+              </ExternalLink>{' '}
+              and{' '}
+              <ExternalLink href="https://betterprogramming.pub/the-pragmatic-programmer-20th-anniversary-edition-15e19ca76e40">
+                <span>The Pragmatic Programmar</span>
               </ExternalLink>
               , I have crafted the ability to both write components in vanilla
               ES6 JavaScript, but can also leverage existing libraries when it
@@ -74,6 +81,8 @@ const Index: React.FC<ComponentProps> = ({ experiments }) => {
             />
           </div>
         </StyledDesignSection>
+      </Container>
+      <Container>
         <StyledExperimentsSection>
           <h2>Experiments</h2>
           <p className="section-intro max-width">
@@ -101,12 +110,12 @@ Index.defaultProps = defaultProps;
 
 export default Index;
 
-const StyledDesignSection = styled.section`
-  background: #fff url('/images/background-pattern.jpg');
-  padding: 60px 20px;
+const StyledDesignSection = styled(Container)`
   display: flex;
   align-items: center;
   flex-direction: row;
+  padding-top: 60px;
+  padding-bottom: 60px;
 
   @media (max-width: 1200px) {
     flex-direction: column;

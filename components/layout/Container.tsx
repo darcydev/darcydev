@@ -25,7 +25,7 @@ Container.defaultProps = defaultProps;
 export default Container;
 
 const StyledSection = styled.section`
-  padding: 0 4%;
+  padding: ${({ width }) => (width === 'full' ? '0' : '0 4%')};
   max-width: ${({ width }) => getWidth(width)};
   margin: 0 auto;
 `;

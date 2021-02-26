@@ -8,7 +8,8 @@ const Footer = () => (
   <StyledFooterSection>
     <SocialLinks />
     <p className="about-site">
-      Built with NextJS, TypeScript, Styled Components and Vercel.
+      Built by Darcy Price and powered by NextJS, TypeScript, Styled Components,
+      Notion, React Notion X, and Vercel.
     </p>
   </StyledFooterSection>
 );

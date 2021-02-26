@@ -29,8 +29,9 @@ ${() => css`
     --background: #121212;
 
     --max-width: 83.5em;
-    --max-width-bleed: 90%;
     --max-width-narrow: 50em;
+    --max-width-bleed: 90%;
+    --max-width-full: 100%;
 
     @media all and (min-width: 1330px) {
       font-size: 1.2em;
@@ -82,7 +83,6 @@ ${() => css`
 
       h1 {
         font-size: 2.5em;
-        color: var(--text-color-white);
         line-height: 1.25;
         font-weight: 800;
         margin-bottom: 1rem;
@@ -120,6 +120,7 @@ ${() => css`
       a {
         color: inherit;
         text-decoration: underline var(--prim-purple);
+        text-decoration-thickness: 3px;
       }
       a:hover,
       a:visited:hover {
@@ -207,7 +208,6 @@ ${() => css`
         margin: 0.5em 0;
         overflow: auto;
       }
-
       .remark-highlight pre[class*='language-'] {
         background-color: transparent;
         margin: 0;
@@ -216,7 +216,6 @@ ${() => css`
         float: left; /* 1 */
         min-width: 100%; /* 2 */
       }
-
       /* highlight for each spotlight line */
       .remark-highlight-code-line {
         background-color: #feb;
@@ -227,7 +226,6 @@ ${() => css`
         padding-left: 0.75em;
         border-left: 0.25em solid #f99;
       }
-
       /* Gutter for line numbers when the line-numbers plugin is active */
       .remark-highlight pre[class*='language-'].line-numbers {
         padding-left: 2.8em;

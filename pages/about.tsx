@@ -37,14 +37,14 @@ const About = () => {
             </p>
             <p>
               After my graduating from law school, I worked as a lawyer for two
-              years in London. However, a secondment program working with an NGO
-              in providing technology solutions to implement solar energy in
-              India, exposed me to the power of technology. I decided to pursue
-              a career as a developer, and within four months I had left a
-              career in law and was working as a full-stack developer.
+              years in London. However, a secondment program working to provide
+              solar energy solutions overseas, exposed me to the power of
+              technology. Within a few months, I had decided to pursue a career
+              as a developer, and and was working as a freelance full-stack
+              developer.
             </p>
             <p>
-              I work heavily with ReactJS, Styled Components, NextJS, Drupal,
+              I mostly work with ReactJS, Styled Components, NextJS, Drupal,
               NodeJS, PHP. If you&apos;re work with those technologies, shoot at
               me on{' '}
               <a
