@@ -26,7 +26,7 @@ export async function getStaticPaths() {
     };
   }
 
-  const rootNotionPageId = '83bad92690db48839936ab9209df056f';
+  const rootNotionPageId = '07a57ba3309241bfb01f5ed53ab27955';
   const rootNotionSpaceId = 'ebbc26ce-77dc-4c8f-97ae-255abc8a2e22';
 
   // This crawls all public pages starting from the given root page in order
