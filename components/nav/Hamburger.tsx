@@ -1,5 +1,7 @@
+/* eslint-disable @typescript-eslint/no-use-before-define */
 import React, { HTMLAttributes } from 'react';
 import styled from 'styled-components';
+
 interface IStyledHamburger extends HTMLAttributes<HTMLButtonElement> {
   menuOpen: boolean;
   onClick: any;

@@ -120,7 +120,7 @@ const StyledIndexPage = styled.section`
   }
 `;
 
-const StyledDesignSection = styled.section`
+const StyledDesignSection = styled.div`
   background: #fff url('/images/background-pattern.jpg');
   padding: 60px 0;
 

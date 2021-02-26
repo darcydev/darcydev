@@ -1,11 +1,11 @@
 import React, { useContext } from 'react';
 import styled from 'styled-components';
-
 import { MenuContext } from '.';
 import Container from './layout/container';
 import { InternalLink } from './Link';
 import Hamburger from './nav/Hamburger';
 import { activeNavItems } from '../constants/nav';
+import NavItem from './nav/NavItem';
 
 const Nav = () => {
   const menuContext = useContext(MenuContext);
@@ -18,7 +18,7 @@ const Nav = () => {
         <nav className="navWrapper">
           <div className="navLeft">
             <InternalLink href="/">
-              <p>Darcy Price</p>
+              <span>Darcy Price</span>
             </InternalLink>
           </div>
 
@@ -26,9 +26,9 @@ const Nav = () => {
             <Hamburger menuOpen={menuOpen} onClick={toggleMenuOpen} />
             <ul className="navLinkList">
               {activeNavItems.map((item) => (
-                <li key={item.label} className="navLinkItem">
-                  <InternalLink href={item.url}>{item.label}</InternalLink>
-                </li>
+                <NavItem key={item.label} href={item.url}>
+                  {item.label}
+                </NavItem>
               ))}
             </ul>
           </div>
@@ -37,6 +37,8 @@ const Nav = () => {
     </NavSection>
   );
 };
+
+export default Nav;
 
 const NavSection = styled.header`
   padding-top: 1em;
@@ -54,9 +56,13 @@ const NavSection = styled.header`
   }
 
   .navLeft {
-    p {
-      margin: 0;
-      font-size: 20px;
+    a {
+      text-decoration: none;
+      text-transform: uppercase;
+
+      span {
+        font-size: 1.25em;
+      }
     }
   }
 
@@ -82,26 +88,6 @@ const NavSection = styled.header`
   .navLinkList {
     display: none;
     list-style: none;
-
-    .navLinkItem {
-      margin-right: 0.5em;
-
-      &:last-child {
-        margin-right: 0;
-      }
-    }
-  }
-
-  .navLink {
-    text-decoration: none;
-
-    &:hover {
-    }
-  }
-
-  .no-underline {
-    display: flex;
-    align-items: center;
   }
 
   @media (min-width: 759px) {
@@ -112,5 +98,3 @@ const NavSection = styled.header`
     }
   }
 `;
-
-export default Nav;

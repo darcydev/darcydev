@@ -40,7 +40,7 @@ const About = () => {
   return (
     <Layout
       pathname={pathname}
-      pageTitle="About"
+      pageTitle="About Me 🕺"
       pageDescription="About page of Portfolio by Darcy Price, Full-Stack Developer in Australia"
     >
       <StyledSection>

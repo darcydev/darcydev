@@ -1,10 +1,23 @@
+/* eslint-disable react/jsx-props-no-spreading */
+/* eslint-disable @typescript-eslint/no-use-before-define */
 import React from 'react';
 import styled from 'styled-components';
-
-import Container from './container';
 import SocialLinks from '../SocialLinks';
 
+const Footer = () => (
+  <StyledFooterSection>
+    <SocialLinks />
+    <p className="about-site">
+      Built with NextJS, TypeScript, Styled Components and Vercel.
+    </p>
+  </StyledFooterSection>
+);
+
+export default Footer;
+
 const StyledFooterSection = styled.footer`
+  padding: 30px 0;
+
   .footer-container {
     display: flex;
     justify-content: center;
@@ -30,16 +43,3 @@ const StyledFooterSection = styled.footer`
     margin-left: auto;
   }
 `;
-
-const Footer = () => (
-  <StyledFooterSection>
-    <SocialLinks />
-    <Container>
-      <p className="about-site">
-        Built with NextJS, TypeScript, Styled Components and Vercel.
-      </p>
-    </Container>
-  </StyledFooterSection>
-);
-
-export default Footer;

@@ -5,6 +5,7 @@ import Container from '../../components/layout/container';
 import ArticlesWrap from '../../components/articles/ArticlesWrap';
 import ArticleTile from '../../components/articles/ArticleTile';
 import { getAllPostsPreview } from '../../lib/posts';
+import { ExternalLink } from '../../components/Link';
 
 const Articles = ({ posts }) => {
   const { pathname } = useRouter();
@@ -17,8 +18,15 @@ const Articles = ({ posts }) => {
     >
       <Container>
         <p className="page-intro">
-          A collection of blog posts about new things I'm learning about... I
-          write and publish my posts on Notion!
+          A collection of blog posts about new things that I am learning about..
+          The articles are written and published on{' '}
+          <ExternalLink href="https://www.notion.so">
+            <span>Notion</span>
+          </ExternalLink>{' '}
+          powered by{' '}
+          <ExternalLink href="https://github.com/NotionX/react-notion-x">
+            <span>react-notion-x</span>
+          </ExternalLink>
         </p>
         <ArticlesWrap>
           {posts.map((post) => (

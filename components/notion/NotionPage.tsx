@@ -37,7 +37,6 @@ const StyledContainer = styled.div`
       .notion-page-scroller {
         main.notion-page {
           .notion-title {
-            display: none;
           }
 
           .notion-collection-row {
@@ -45,6 +44,19 @@ const StyledContainer = styled.div`
 
           .notion-page-content {
             article {
+              .notion-table-of-contents {
+                a.notion-table-of-contents-item {
+                  span {
+                    color: #fff;
+                    border-bottom: none;
+                  }
+
+                  &:hover {
+                    text-decoration: none;
+                  }
+                }
+              }
+
               .notion-link {
                 border-width: 3px;
                 border-image: linear-gradient(

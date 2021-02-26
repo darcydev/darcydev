@@ -1,4 +1,5 @@
 import React from 'react';
+import { useRouter } from 'next/router';
 import { getPageTitle, getAllPagesInSpace } from 'notion-utils';
 import { NotionAPI } from 'notion-client';
 import NotionPage from '../../components/notion/NotionPage';
@@ -48,10 +49,11 @@ export default function Article({ recordMap }) {
     return null;
   }
 
+  const { pathname } = useRouter();
   const title = getPageTitle(recordMap);
 
   return (
-    <Layout pageTitle={title} pathname="/article">
+    <Layout pageTitle={title} pathname={pathname}>
       <NotionPage recordMap={recordMap} />
     </Layout>
   );

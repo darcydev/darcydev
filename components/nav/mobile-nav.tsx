@@ -1,8 +1,24 @@
+/* eslint-disable @typescript-eslint/no-use-before-define */
 import React from 'react';
 import styled, { keyframes } from 'styled-components';
-
-import { InternalLink } from '../Link';
 import { activeNavItems } from '../../constants/nav';
+import NavItem from './NavItem';
+
+const MobileNav = () => (
+  <StyledMobileNav>
+    <div className="mobile-nav-container">
+      <ul>
+        {activeNavItems.map((item) => (
+          <NavItem key={item.label} href={item.url}>
+            {item.label}
+          </NavItem>
+        ))}
+      </ul>
+    </div>
+  </StyledMobileNav>
+);
+
+export default MobileNav;
 
 const fadeDown = keyframes`
     0% {
@@ -40,19 +56,3 @@ const StyledMobileNav = styled.section`
     }
   }
 `;
-
-const MobileNav = () => (
-  <StyledMobileNav>
-    <div className="mobile-nav-container">
-      <ul className="linkList">
-        {activeNavItems.map((item) => (
-          <li key={item.label} className="listItem">
-            <InternalLink href={item.url}>{item.label}</InternalLink>
-          </li>
-        ))}
-      </ul>
-    </div>
-  </StyledMobileNav>
-);
-
-export default MobileNav;

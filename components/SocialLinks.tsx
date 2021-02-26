@@ -1,11 +1,10 @@
 import React from 'react';
-import Container from './layout/container';
 import { GitHubIcon, TwitterIcon, LinkedInIcon, MediumIcon } from './Icons';
 import { ExternalLink } from './Link';
 
 export default function SocialLinks() {
   return (
-    <Container className="footer-container">
+    <div className="footer-container">
       <ul className="footerSocialLinks">
         <li className="footerSocialLink">
           <ExternalLink href="https://github.com/darcydev">
@@ -28,6 +27,6 @@ export default function SocialLinks() {
           </ExternalLink>
         </li>
       </ul>
-    </Container>
+    </div>
   );
 }

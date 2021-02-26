@@ -1,6 +1,5 @@
 import React, { createContext } from 'react';
-import { StyledMain } from './styles/layout.styles';
-import Header from './header/header';
+import Header from './layout/header';
 import Footer from './layout/footer';
 import Nav from './nav';
 import MobileNav from './nav/mobile-nav';
@@ -46,7 +45,7 @@ const Layout: React.FC<ComponentProps> = ({
       ) : (
         <>
           <Header pathname={pathname} title={pageTitle} />
-          <StyledMain>{children}</StyledMain>
+          <main>{children}</main>
           <Footer />
         </>
       )}

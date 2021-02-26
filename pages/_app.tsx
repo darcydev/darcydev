@@ -11,7 +11,6 @@ import 'react-notion-x/src/styles.css';
 import 'prismjs/themes/prism-okaidia.css';
 import '../styles/notion.css';
 import { GlobalStyles } from '../styles';
-import '../components/styles/layout.css';
 
 const MyApp = ({ Component, pageProps }: AppProps) => (
   <>
