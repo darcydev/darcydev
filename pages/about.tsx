@@ -2,8 +2,8 @@ import React from 'react';
 import { useRouter } from 'next/router';
 import Image from 'next/image';
 import styled from 'styled-components';
-import { Layout } from '../components';
-import Container from '../components/layout/container';
+import Layout from '../components/layout/Layout';
+import Container from '../components/layout/Container';
 import { calculateAge } from '../utils/calculateAge';
 
 const StyledSection = styled.section`

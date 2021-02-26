@@ -1,8 +1,8 @@
 import React, { createContext } from 'react';
-import Header from './layout/header';
-import Footer from './layout/footer';
-import Nav from './nav';
-import MobileNav from './nav/mobile-nav';
+import Header from './Header';
+import Footer from './Footer';
+import Nav from '../nav';
+import MobileNav from '../nav/mobile-nav';
 import NextHead from './NextHead';
 
 interface ComponentProps extends React.HTMLAttributes<HTMLElement> {
@@ -55,4 +55,4 @@ const Layout: React.FC<ComponentProps> = ({
 
 Layout.defaultProps = defaultProps;
 
-export { Layout };
+export default Layout;

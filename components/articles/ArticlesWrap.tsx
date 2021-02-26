@@ -5,9 +5,9 @@ interface Props {
   children: ReactElement;
 }
 
-const ArticlesWrap = ({ children }: Props) => {
-  return <StyledCards>{children}</StyledCards>;
-};
+const ArticlesWrap = ({ children }: Props) => (
+  <StyledCards>{children}</StyledCards>
+);
 
 const StyledCards = styled.section`
   display: flex;

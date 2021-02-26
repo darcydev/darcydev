@@ -1,7 +1,7 @@
 import React from 'react';
 import Head from 'next/head';
 
-import SiteConfig from '../config/index.json';
+import SiteConfig from '../../config/index.json';
 
 interface INextHead {
   pageTitle: string;

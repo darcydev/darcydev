@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-use-before-define */
 import React from 'react';
 import styled, { keyframes } from 'styled-components';
-import { activeNavItems } from '../../constants/nav';
+import activeNavItems from '../../constants/nav';
 import NavItem from './NavItem';
 
 const MobileNav = () => (

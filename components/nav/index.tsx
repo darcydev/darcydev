@@ -1,11 +1,12 @@
+/* eslint-disable @typescript-eslint/no-use-before-define */
 import React, { useContext } from 'react';
 import styled from 'styled-components';
-import { MenuContext } from '.';
-import Container from './layout/container';
-import { InternalLink } from './Link';
-import Hamburger from './nav/Hamburger';
-import { activeNavItems } from '../constants/nav';
-import NavItem from './nav/NavItem';
+import { MenuContext } from '../layout/Layout';
+import Container from '../layout/Container';
+import { InternalLink } from '../Link';
+import Hamburger from './Hamburger';
+import activeNavItems from '../../constants/nav';
+import NavItem from './NavItem';
 
 const Nav = () => {
   const menuContext = useContext(MenuContext);

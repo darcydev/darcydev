@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-use-before-define */
 import React from 'react';
 import styled from 'styled-components';
-import Container from './container';
+import Container from './Container';
 
 interface IHeader {
   pathname: string;

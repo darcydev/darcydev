@@ -3,7 +3,7 @@ import { useRouter } from 'next/router';
 import { getPageTitle, getAllPagesInSpace } from 'notion-utils';
 import { NotionAPI } from 'notion-client';
 import NotionPage from '../../components/notion/NotionPage';
-import { Layout } from '../../components/layout';
+import Layout from '../../components/layout/Layout';
 
 const notion = new NotionAPI();
 

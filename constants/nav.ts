@@ -5,4 +5,6 @@ const navItems = [
   { label: 'Contact', url: '/contact', active: false },
 ];
 
-export const activeNavItems = navItems.filter((item) => item.active);
+const activeNavItems = navItems.filter((item) => item.active);
+
+export default activeNavItems;

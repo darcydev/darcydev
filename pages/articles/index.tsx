@@ -1,7 +1,7 @@
 import React from 'react';
 import { useRouter } from 'next/router';
-import { Layout } from '../../components';
-import Container from '../../components/layout/container';
+import Layout from '../../components/layout/Layout';
+import Container from '../../components/layout/Container';
 import ArticlesWrap from '../../components/articles/ArticlesWrap';
 import ArticleTile from '../../components/articles/ArticleTile';
 import { getAllPostsPreview } from '../../lib/posts';
