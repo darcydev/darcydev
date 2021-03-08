@@ -1,6 +1,11 @@
 import styled, { css } from 'styled-components';
-import { GitHub, Codepen, Twitter, Linkedin } from 'react-feather';
-import { AiOutlineMedium } from 'react-icons/ai';
+import {
+  AiOutlineGithub as Github,
+  AiOutlineLinkedin as Linkedin,
+  AiOutlineTwitter as Twitter,
+  AiOutlineMedium as Medium,
+  AiOutlineCodepen as Codepen,
+} from 'react-icons/ai';
 import { HiOutlineMail } from 'react-icons/hi';
 
 const IconStyles = css`
@@ -8,7 +13,7 @@ const IconStyles = css`
   width: 1.2em;
 `;
 
-export const GitHubIcon = styled(GitHub)`
+export const GitHubIcon = styled(Github)`
   ${IconStyles}
 `;
 
@@ -24,7 +29,7 @@ export const LinkedInIcon = styled(Linkedin)`
   ${IconStyles}
 `;
 
-export const MediumIcon = styled(AiOutlineMedium)`
+export const MediumIcon = styled(Medium)`
   ${IconStyles}
 `;
 

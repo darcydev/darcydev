@@ -2,7 +2,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import Tilt from 'react-tilt';
-import { ExternalLink as ExternalLinkIcon } from 'react-feather';
+import { FiExternalLink } from 'react-icons/fi';
 import Tag from './Tag';
 import { formatDate } from '../../utils/formateDate';
 import Link from '../links/Link';
@@ -37,7 +37,7 @@ const ExperimentCard: React.FC<ComponentProps> = ({ experiment }) => {
           <div className="experiment-meta">
             <time className="experiment-date">{formatDate(createdAt)}</time>
             <span>
-              <ExternalLinkIcon />
+              <FiExternalLink />
             </span>
           </div>
           <h3 className="experiment-item-heading">{title}</h3>
