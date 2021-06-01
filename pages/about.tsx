@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-use-before-define */
 import React from 'react';
 import { useRouter } from 'next/router';
-import Image from 'next/image';
+import NextImage from 'next/image';
 import styled from 'styled-components';
 import Layout from '../components/layout/Layout';
 import Container from '../components/layout/Container';
@@ -21,19 +21,15 @@ const About = () => {
         <Container width="narrow">
           <div className="postContent">
             <div className="avatarImage">
-              <Image
-                src="https://via.placeholder.com/600.jpg"
-                width={200}
-                height={200}
-              />
+              <NextImage src="/images/profile.jpg" width={200} height={200} />
             </div>
             <p>
               I&apos;m Darcy Price, a {age} years&apos; old full-stack developer
-              based in Sydney, Australia. I love to build fast and delightful
-              experiences on the web applications. I&apos;m also passionate
-              about building performant, decoupled, testable and maintainable
-              code. I also have a keen interested in open source and learning
-              new technologies.
+              based in Sydney, Australia. I love to build performant and
+              beautiful web applications. I&apos;m also passionate about
+              building performant, decoupled, testable and maintainable code,
+              and have a keen interest in open source and learning new
+              technologies.
             </p>
             <p>
               After my graduating from law school, I worked as a lawyer for two
@@ -44,9 +40,9 @@ const About = () => {
               developer.
             </p>
             <p>
-              I mostly work with ReactJS, Styled Components, NextJS, Drupal,
-              NodeJS, PHP. If you&apos;re work with those technologies, shoot at
-              me on{' '}
+              I mostly work with ReactJS, NodeJS, PHP (Laravel), Drupal,
+              WordPress, NextJS, Styled Components, NextJS. If you&apos;re work
+              with those technologies, shoot at me on{' '}
               <a
                 href="https://twitter.com/mrdarcyprice"
                 target="_blank"

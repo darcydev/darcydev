@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-use-before-define */
 import React from 'react';
-import Image from 'next/image';
+import NextImage from 'next/image';
 import { useRouter } from 'next/router';
 import styled from 'styled-components';
 import Layout from '../components/layout/Layout';
@@ -44,7 +44,7 @@ const Index: React.FC<ComponentProps> = ({ experiments }) => {
     <Layout pathname={pathname} pageTitle="Darcy Price">
       <Container
         width="full"
-        style={{ background: `#fff url('/images/background-pattern.jpg')` }}
+        style={{ background: "#fff url('/images/background-pattern.jpg')" }}
       >
         <StyledDesignSection>
           <div className="txt-wrp">
@@ -78,17 +78,17 @@ const Index: React.FC<ComponentProps> = ({ experiments }) => {
               programming languages, frameworks and paradigms.
             </p>
           </div>
-          <div className="img-wrp">
-            <Image
+          {/* <div className="img-wrp">
+            <NextImage
               src="/images/craft.jpg"
               height={200}
               width={350}
               sizes="(min-width: 759px) 800px"
             />
-          </div>
+          </div> */}
         </StyledDesignSection>
       </Container>
-      <Container>
+      {/* <Container>
         <StyledExperimentsSection>
           <h2>Experiments</h2>
           <p className="section-intro max-width">
@@ -98,7 +98,7 @@ const Index: React.FC<ComponentProps> = ({ experiments }) => {
           </p>
           <ExperimentCards experiments={experiments} />
         </StyledExperimentsSection>
-      </Container>
+      </Container> */}
     </Layout>
   );
 };
